@@ -1,5 +1,13 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
+
+function MapTile(props) {
+  return props;
+}
+
+function MapRows(props) {
+  return props.tiles.map((tile) => <MapTile value={tile} />);
+}
 
 class Game extends React.Component {
   constructor() {
@@ -9,8 +17,12 @@ class Game extends React.Component {
       isLoaded: false,
       tiles: [],
     };
-    this.state.isLoaded = true
-    this.state.tiles = ["string1", "string2"]
+    this.state.isLoaded = true;
+    this.state.tiles = [
+      ["string1", "string2"],
+      ["string3", "string4"],
+    ];
+    console.log(this.state.tiles);
   }
 
   componentDidMount() {
@@ -41,10 +53,8 @@ class Game extends React.Component {
     } else {
       return (
         <section>
-          {tiles.map((tile) => (
-            // {row.map(tile) => (
-              <div class="tile">{tile}</div>
-            // )}
+          {tiles.map((row) => (
+            <MapRows tiles={row} />
           ))}
         </section>
       );
@@ -52,4 +62,4 @@ class Game extends React.Component {
   }
 }
 
-export default Game
+export default Game;
