@@ -1,16 +1,9 @@
 import React from "react"
-import Sprite from "./components/sprite"
-
+import Player from "./components/player"
 export default function App() {
   return (
     <div className="zone-container">
-      <Sprite image={"/sprites/skins/vimBishop1.png"} data = {{
-        x: 0,
-        y: 0,
-        w: 32,
-        h: 32,
-      }}
-      />
+      <Player skin="m2" />
     </div>
   );
 }
