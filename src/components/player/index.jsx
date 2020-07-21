@@ -1,24 +1,21 @@
 import React from "react"
 import Actor from "../actor"
 import useKeyPress from "../..hooks/use-key-press"
+import useWalk from "../..hooks/use-walk"
 
 export default function Player({ skin }) {
+  const {dir, step, walk} = useWalk(4)
   const data = {
     h: 32,
     w:32,
   };
 
-  const directions = { 
-    j: 0,
-    h: 1,
-    l: 2,
-    k: 3,
-  }
+
 
   useKeyPress((e) => {
-    if (directions.hasOwnProperty())
+    walk(e)
     e.preventDefault()
   })
 
-  return <Actor sprite={`/sprites/skins/${skin}.png`} data = {data} />;
+  return <Actor sprite={`/sprites/skins/${skin}.png`} data={data} step={step} dir={dir} />;
 }
