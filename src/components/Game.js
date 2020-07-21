@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import axios from "axios";
+import LevelRender from "./LevelRender.js";
 
-function MapTile(props) {
-  console.log(props)
-  return props.value;
-}
-
-function MapRows(props) {
-  return props.tiles.map((tile) => <MapTile value={tile} />);
-}
+// // processing a tile
+// function MapTile(props) {
+//   console.log(props)
+//   return props.value;
+// }
+//
+// // processing a row
+// function MapRows(props) {
+//   return props.tiles.map((tile) => <MapTile value={tile} />);
+// }
+//
+// // processing the map
+// function Map(props) {
+//   return ( props.tiles.map((row) => (
+//     <div>
+//       <MapRows tiles={row} />
+//     </div>
+//   )))
+// }
 
 class Game extends React.Component {
   constructor() {
@@ -18,6 +30,7 @@ class Game extends React.Component {
       isLoaded: false,
       tiles: [],
     };
+    // placeholder for API response
     this.state.isLoaded = true;
     this.state.tiles = [
       ["string1", "string2"],
@@ -26,6 +39,8 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
+    // API connection code
+
     // axios.get("/")
     //   .then((res) => res)
     //   .then(
@@ -47,17 +62,16 @@ class Game extends React.Component {
   render() {
     const { error, isLoaded, tiles } = this.state;
     if (error) {
+      // if error in connection
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
+      // if API hasn't returned data yet
       return <div>Loading...</div>;
     } else {
+
       return (
         <section>
-          {tiles.map((row) => (
-            <div>
-            <MapRows tiles={row} />
-            </div>
-          ))}
+          <LevelRender props={tiles} />
         </section>
       );
     }
