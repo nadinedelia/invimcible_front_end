@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 function MapTile(props) {
-  return props;
+  console.log(props)
+  return props.value;
 }
 
 function MapRows(props) {
@@ -22,7 +23,6 @@ class Game extends React.Component {
       ["string1", "string2"],
       ["string3", "string4"],
     ];
-    console.log(this.state.tiles);
   }
 
   componentDidMount() {
@@ -54,7 +54,9 @@ class Game extends React.Component {
       return (
         <section>
           {tiles.map((row) => (
+            <div>
             <MapRows tiles={row} />
+            </div>
           ))}
         </section>
       );
