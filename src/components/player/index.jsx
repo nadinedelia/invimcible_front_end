@@ -12,8 +12,8 @@ export default function Player({ skin }) {
 
   useKeyPress((e) => {
     const dir = e.key.replace("Key", "").toLowerCase()
-    walk(dir)
+    walk(dir) 
     e.preventDefault();
   })
-  return <Actor sprite={`/sprites/skins/${skin}.png`} data={data} />;
+  return <Actor sprite={`/sprites/skins/${skin}.png`} data={data} step={step} dir={dir}/>;
 }
