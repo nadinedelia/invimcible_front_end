@@ -23,13 +23,14 @@ import LevelRender from "./LevelRender.js";
 // }
 
 class Game extends React.Component {
-  constructor() {
+  constructor(api = axios) {
     super();
     this.state = {
       error: null,
       isLoaded: false,
       tiles: [],
     };
+    this.api = api;
     // placeholder for API response
     this.state.isLoaded = true;
     this.state.tiles = [
@@ -40,7 +41,6 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-
     // axios.get("/")
     //   .then((res) => res)
     //   .then(
@@ -68,7 +68,6 @@ class Game extends React.Component {
       // if API hasn't returned data yet
       return <div>Loading...</div>;
     } else {
-
       return (
         <section>
           <LevelRender props={tiles} />
