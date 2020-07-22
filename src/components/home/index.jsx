@@ -1,6 +1,7 @@
 import React from "react"
 import image from "../../images/home_screen_still.jpg"
 
+
 console.log(image)
 
 export default function Home() {
@@ -24,3 +25,5 @@ export default function Home() {
     </div>
   )
 }
+
+

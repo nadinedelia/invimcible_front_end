@@ -10,35 +10,35 @@ export default function About () {
     <div className="about">
     <center>
       <div class="background-container">
-        <p> Hi, we are the creators of Run Boris, Run. </p>
+        <p> Hi, we are the creators of The adventures of Vim. </p>
 
-        <p> We are six budding software developers who joined Makers Academy in February 2020 and built Run Boris, Run as our final project. </p>
+        <p> We are six budding software developers who joined Makers Academy in May 2020 and built The Adventures of Vim as our final project. </p>
 
         <p> Click on our names to see our other work. </p>
 
         <div class="about-images-container">
           <div class="grid-item">
-            <a href='https://github.com/collier-jo'><p>Jo Collier</p></a>
+            <a href='https://github.com/sofyloafy'><p>Sophie Brown</p></a>
           </div>
 
           <div class="grid-item">
-            <a href='https://github.com/hiboabd'><p>Hibo Abdilaahi</p></a>
+            <a href='https://github.com/Sumner1185'><p>Al Sumner</p></a>
           </div>
 
           <div class="grid-item">
-            <a href='https://github.com/GarethWoodman'><p>Gareth Woodman</p></a>
+            <a href='https://github.com/tristanlangford'><p>Tristan Langford</p></a>
           </div>
 
           <div class="grid-item">
-            <a href='https://github.com/edmond-b'><p>Edmond Bullaj</p></a>
+            <a href='https://github.com/raerachael'><p>Rachael Ewins</p></a>
           </div>
 
           <div class="grid-item">
-            <a href='https://github.com/LTurns'><p>Lizzie Turney</p></a>
+            <a href='https://github.com/nadinedelia'><p>Nadine Loepfe</p></a>
           </div>
 
           <div class="grid-item">
-            <a href='https://github.com/cjm106'><p>Colin Muir</p></a>
+            <a href='https://github.com/katie-mcdonagh'><p>Katie McDonagh</p></a>
           </div>
 
         </div>
