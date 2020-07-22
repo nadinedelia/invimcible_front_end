@@ -1,9 +1,6 @@
 import React from "react"
 import image from "../../images/home_screen_still.jpg"
 
-
-console.log(image)
-
 export default function Home() {
   const style = {
     height: '700',
@@ -18,8 +15,8 @@ export default function Home() {
         id="vimGame"
         style={ style }
         ></img>
-        <span class="start-btn">START GAME</span>
-        <span class="about-btn">ABOUT</span>
+        <a href='/play'><button class="start-btn">START GAME</button></a>
+        <a href='./about'><button class="about-btn">ABOUT</button></a>
       </div>
       </center>
     </div>
