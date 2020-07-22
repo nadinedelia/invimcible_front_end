@@ -41,23 +41,22 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-
-    this.api.get("/")
-      .then((res) => res)
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            tiles: [...result.data.tiles],
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+    //   this.api.get("/")
+    //     .then((res) => res)
+    //     .then(
+    //       (result) => {
+    //         this.setState({
+    //           isLoaded: true,
+    //           tiles: [...result.data.tiles],
+    //         });
+    //       },
+    //       (error) => {
+    //         this.setState({
+    //           isLoaded: true,
+    //           error,
+    //         });
+    //       }
+    //     );
   }
 
   render() {
