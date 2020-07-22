@@ -32,11 +32,11 @@ class Game extends React.Component {
     };
     this.api = api;
     // placeholder for API response
-    this.state.isLoaded = true;
-    this.state.tiles = [
-      ["string1", "string2"],
-      ["string3", "string4"],
-    ];
+    // this.state.isLoaded = true;
+    // this.state.tiles = [
+    //   ["string1", "string2"],
+    //   ["string3", "string4"],
+    // ];
   }
 
   componentDidMount() {
@@ -45,22 +45,23 @@ class Game extends React.Component {
     // console.log(axios.get())
     // console.log(this.api)
     // console.log(this.api.get())
-    // this.api.get("/")
-    //   .then((res) => res)
-    //   .then(
-    //     (result) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         tiles: [...result.data.tiles],
-    //       });
-    //     },
-    //     (error) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         error,
-    //       });
-    //     }
-    //   );
+    axios.get("https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/")
+      .then((res) => res)
+      .then(
+        (result) => {
+          console.log(result)
+          this.setState({
+            isLoaded: true,
+            tiles: [...result.data.level1],
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
   }
 
   render() {
