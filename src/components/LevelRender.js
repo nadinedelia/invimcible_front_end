@@ -4,10 +4,14 @@ import TileSprite from "./TileRender.js";
 
 // processing a tile
 function MapTile(props) {
+  const tile = {
+    x: 0 * 40,
+    y: 2.5 * 40,
+  };
   return (
     <div class="tile">
       {" "}
-      <TileSprite />{" "}
+      <TileSprite tile={tile} />{" "}
     </div>
   );
 }

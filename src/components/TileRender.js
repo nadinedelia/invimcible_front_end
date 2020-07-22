@@ -1,5 +1,5 @@
 import React from "react";
-export default function TileSprite({ image, data, position }) {
+export default function TileSprite({ tile }) {
   return (
     <div
       style={{
@@ -8,7 +8,7 @@ export default function TileSprite({ image, data, position }) {
         width: "40px",
         backgroundImage: `url("img/Viccy_park_tiles.png")`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: `-0px -0px`,
+        backgroundPosition: `-${tile.x}px -${tile.y}px`,
       }}
     />
   );
