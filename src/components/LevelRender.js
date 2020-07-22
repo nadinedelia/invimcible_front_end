@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import './style.css';
+import "./map.css";
+import TileSprite from "./TileRender.js";
 
 // processing a tile
 function MapTile(props) {
-  return <div class="tile"> `${props.value}` </div>;
+  return (
+    <div class="tile">
+      {" "}
+      <TileSprite />{" "}
+    </div>
+  );
 }
 
 class LevelRender extends React.Component {
@@ -16,9 +22,11 @@ class LevelRender extends React.Component {
   MapRows(props) {
     return (
       <div class="row">
-        {props.tiles.map((tile) => <MapTile value={tile} />)}
+        {props.tiles.map((tile) => (
+          <MapTile value={tile} />
+        ))}
       </div>
-    )
+    );
   }
 
   // processing the map
@@ -27,10 +35,9 @@ class LevelRender extends React.Component {
       <div class="map">
         {this.tiles.props.map((row) => (
           <this.MapRows tiles={row} />
-        ))
-        }
+        ))}
       </div>
-    )
+    );
   }
 }
 
