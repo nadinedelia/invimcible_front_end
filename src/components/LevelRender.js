@@ -31,12 +31,12 @@ function MapTile(props) {
   //     break;
   // }
   var tile = {
-        x: 1 * 32,
-        y: 1 * 32,
-      };
+    x: 1 * 32,
+    y: 1 * 32,
+  };
   return (
     <div class="tile">
-      {"S"}
+      {" "}
       <TileSprite tile={tile} />
     </div>
   );

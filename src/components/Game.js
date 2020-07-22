@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 import LevelRender from "./LevelRender.js";
 
 // // processing a tile
@@ -40,17 +39,17 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-      fetch(
-        "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
-      )
-       .then((res) => res.json() )
+    fetch(
+      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
+    )
+      .then((res) => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
             tiles: [...result.level1],
           });
-          console.log(this.state.tiles)
+          console.log(this.state.tiles);
         },
         (error) => {
           this.setState({
