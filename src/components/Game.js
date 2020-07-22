@@ -41,10 +41,6 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-    // console.log(axios)
-    // console.log(axios.get())
-    // console.log(this.api)
-    // console.log(this.api.get())
     axios.get("https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/")
       .then((res) => res)
       .then(
