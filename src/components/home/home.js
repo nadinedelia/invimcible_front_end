@@ -4,20 +4,21 @@ import image from "../../images/home_screen_still.jpg"
 console.log(image)
 
 export default function Home() {
-  const style = { width: '100%' };
+  const style = {
+    height: '700',
+    width: '100%',
+  };
   return(
-    <div className="home">
+    <div class="homescreencontainer">
       <center>
       <div class="background-container">
-        <p>The adventures of Vim Bishop</p>
         <img src={image} 
         alt="HomeScreen"
         id="vimGame"
         style={ style }
-        background-position="center"
-        background-repeat="no-repeat"
-        background-size="cover"></img>
-        <span class='start-btn'>START</span>
+        ></img>
+        <span class="start-btn">START GAME</span>
+        <span class="about-btn">ABOUT</span>
       </div>
       </center>
     </div>
