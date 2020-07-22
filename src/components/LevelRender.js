@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css';
 
 // processing a tile
 function MapTile(props) {
@@ -13,16 +14,23 @@ class LevelRender extends React.Component {
 
   // processing a row
   MapRows(props) {
-    return props.tiles.map((tile) => <MapTile value={tile} />);
+    return (
+      <div class="row">
+        {props.tiles.map((tile) => <MapTile value={tile} />)}
+      </div>
+    )
   }
 
   // processing the map
   render() {
-    return this.tiles.props.map((row) => (
+    return (
       <div class="map">
-        <this.MapRows tiles={row} />
+        {this.tiles.props.map((row) => (
+          <this.MapRows tiles={row} />
+        ))
+        }
       </div>
-    ));
+    )
   }
 }
 

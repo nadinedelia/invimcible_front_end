@@ -44,7 +44,7 @@ class Game extends React.Component {
     console.log(axios)
     console.log(axios.get())
     console.log(this.api)
-    console.log(this.api.get())
+    // console.log(this.api.get())
     // this.api.get("/")
     //   .then((res) => res)
     //   .then(
