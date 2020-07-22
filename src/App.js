@@ -1,10 +1,14 @@
 import React from "react"
-import Player from "./components/player"
+import Home from "./components/home/home.js"
+// import Player from "./components/player"
 
 export default function App() {
   return (
     <div className="zone-container">
-      <Player skin="m2" />
+      <Home />
     </div>
+    // <div className="zone-container">
+    //   <Player skin="m2" />
+    // </div>
   );
 }
