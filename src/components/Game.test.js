@@ -14,8 +14,12 @@ describe('Game', () => {
 
   var mockedAPI = new MockedAPI
 
-  test('it should return data', () => {
+  xtest('it should return data', () => {
     var game = new Game(mockedAPI)
     expect(game.state.tiles).toEqual(expectedResult);
+  })
+  test('connection to API', () => {
+    var game = new Game(mockedAPI)
+    expect(game.state.isLoaded).toEqual(true)
   })
 })
