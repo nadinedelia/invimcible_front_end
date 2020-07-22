@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import moment from "moment";
 import LevelRender from "./LevelRender.js";
 
 // // processing a tile
@@ -23,14 +23,13 @@ import LevelRender from "./LevelRender.js";
 // }
 
 class Game extends React.Component {
-  constructor(api = axios) {
+  constructor() {
     super();
     this.state = {
       error: null,
       isLoaded: false,
       tiles: [],
     };
-    this.api = api;
     // placeholder for API response
     // this.state.isLoaded = true;
     // this.state.tiles = [
@@ -41,18 +40,17 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-    axios
-      .get(
+      fetch(
         "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
       )
-      .then((res) => res)
+       .then((res) => res.json() )
       .then(
         (result) => {
-          console.log(result);
           this.setState({
             isLoaded: true,
-            tiles: [...result.data.level1],
+            tiles: [...result.level1],
           });
+          console.log(this.state.tiles)
         },
         (error) => {
           this.setState({

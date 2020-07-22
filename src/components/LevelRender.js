@@ -36,6 +36,7 @@ function MapTile(props) {
       };
   return (
     <div class="tile">
+      {"S"}
       <TileSprite tile={tile} />
     </div>
   );

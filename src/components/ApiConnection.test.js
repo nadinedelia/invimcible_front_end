@@ -18,14 +18,12 @@ afterEach(() => {
 
 describe("Level 1 connection", () => {
   test("can connect to JSON", async () => {
-    const fakeResponse = [
+    const fakeResponse =
       {
-        level1: [
-          ["string1", "string2"],
-          ["string3", "string4"],
-        ],
-      },
-    ];
+        level1:
+          [["string1", "string2"],
+          ["string3", "string4"]]
+      }
 
     jest.spyOn(window, "fetch").mockImplementation(() => {
       const fetchResponse = {
@@ -38,7 +36,7 @@ describe("Level 1 connection", () => {
       render(<Game />, container);
     });
 
-    expect(container.textContent).toBe(undefined);
+    expect(container.textContent).toBe("SSSS");
 
     window.fetch.mockRestore();
   });
