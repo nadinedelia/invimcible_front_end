@@ -48,7 +48,6 @@
   src: url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap")
 }
 body {
-  /* background-color: black; */
   font-size: 30pt;
   font-family: 'Press Start 2p';
 
@@ -85,15 +84,4 @@ body {
 	border-radius: 7px;
   box-shadow: 0 .2em gray; 
   cursor: pointer;
-}
-.start-btn:active {
-	box-shadow: none;
-	position: relative;
-	top: .2em;
-}
-
-.about-btn:active {
-	box-shadow: none;
-	position: relative;
-	top: .2em;
 }
