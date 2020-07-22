@@ -41,9 +41,9 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-    console.log(axios)
-    console.log(axios.get())
-    console.log(this.api)
+    // console.log(axios)
+    // console.log(axios.get())
+    // console.log(this.api)
     // console.log(this.api.get())
     // this.api.get("/")
     //   .then((res) => res)
