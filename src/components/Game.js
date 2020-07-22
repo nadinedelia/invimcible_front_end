@@ -41,11 +41,14 @@ class Game extends React.Component {
 
   componentDidMount() {
     // API connection code
-    axios.get("https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/")
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
+      )
       .then((res) => res)
       .then(
         (result) => {
-          console.log(result)
+          console.log(result);
           this.setState({
             isLoaded: true,
             tiles: [...result.data.level1],
