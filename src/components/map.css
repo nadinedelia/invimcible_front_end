@@ -50,7 +50,6 @@ body {
   border: 3px solid white;
   height: 100px;
   width: 736px;
-  background-color: #6d6d6d;
 }
 
 p {
@@ -72,7 +71,6 @@ p {
   width: 200px;
   margin-left: 50px;
   text-align: center;
-  background-color: #3d3d3d;
 }
 
 .container-right {
