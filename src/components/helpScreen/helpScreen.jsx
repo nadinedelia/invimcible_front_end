@@ -1,4 +1,5 @@
 import React from "react"
+import "./helpScreen.css"
 
 export default function Output(movement) {
   return (
@@ -6,7 +7,7 @@ export default function Output(movement) {
       <h2>Movement:</h2>
       <ul>
         {movement.map((control) => (
-          <div>{control}</div>
+          <div class="controls"> {control}</div>
         ))}
       </ul>
     </div>
