@@ -75,3 +75,8 @@ p1 {
 a {
   color: grey;
 }
+
+td {
+  padding: 10px;
+  text-align: center;
+}
