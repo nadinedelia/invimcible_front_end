@@ -13,6 +13,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
+  justify-content: center;
 }
 
 .tile {
@@ -31,15 +32,6 @@ body {
   body {
     font-size: 1em;
   }
-}
-
-.zone-container {
-  /* position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  /* transform: translate(-50%, -50%); */
-  width: 800px;
 }
 
 .map {
@@ -77,14 +69,7 @@ p {
   text-align: center;
 }
 
-.container-right {
-  width: 70%;
-}
-
 .background-container {
   width: 600px;
-  text-align: center;
   justify-content: center;
-  background-image: cover;
-  margin-top: 100px;
 }
