@@ -6,7 +6,9 @@ export default function Play() {
   return (
     <div className="super-container">
       <center>
-        <img src={"images/logo.png"} className="logo2" />
+        <a href="/">
+          <img src={"images/logo.png"} className="logo2" />
+        </a>
         <div className="game-container">
           <div className="support-container">
             <h3> PLEASE PRINT SMTH </h3>
