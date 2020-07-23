@@ -1,12 +1,11 @@
 import React from "react";
-import image from "../../images/home_screen_still.jpg";
 
 export default function Home() {
   return (
     <center>
       <img src={"images/logo.png"} className="logo" />
       <div class="homescreencontainer">
-        <img src={image} alt="HomeScreen" id="vimGame"></img>
+        <img src={"images/home_screen.png"} alt="HomeScreen" id="vimGame"></img>
         <a href="./about">
           <button class="about-btn">ABOUT</button>
         </a>
