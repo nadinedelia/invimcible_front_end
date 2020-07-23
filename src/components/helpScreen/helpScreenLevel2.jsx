@@ -1,4 +1,4 @@
-import React from "react";
+import Output from "./helpScreen"
 
 export default function HelpScreenLevel2({ }) {
   const movement = [
@@ -11,13 +11,6 @@ export default function HelpScreenLevel2({ }) {
   ]
 
   return (
-    <div>
-    <h2>Movement:</h2>
-    <ul>
-      {movement.map((control) => (
-        <div>{control}</div>
-      ))}
-    </ul>
-    </div>
+    Output(movement)
   )
 }
