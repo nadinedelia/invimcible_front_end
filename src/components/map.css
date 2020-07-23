@@ -3,6 +3,11 @@
   src: url("/fonts/SFAlienEncounters.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "arcadeclassic";
+  src: url("/fonts/arcadeclassic.regular.tff") format("truetype");
+}
+
 body {
   background-image: url("https://i.imgur.com/oZ8oRqh.png");
 }
@@ -31,21 +36,20 @@ body {
   left: 50%;
   /* bring your own prefixes */
   /* transform: translate(-50%, -50%); */
-  width: 720px;
+  width: 800px;
 }
 
 .map {
-  width: 720px;
-  height: 355px;
+  width: 736px;
+  height: 417px;
   justify-content: center;
   border: 3px solid white;
 }
 
 .speech-container {
-  margin-top: 30px;
   border: 3px solid white;
   height: 100px;
-  width: 720px;
+  width: 736px;
   background-color: #6d6d6d;
 }
 
