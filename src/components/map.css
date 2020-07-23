@@ -59,7 +59,8 @@ p {
   color: white;
   font-family: "SFAlien";
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 1.5em;
+  line-height: 1.6;
 }
 
 .game-container {
@@ -85,4 +86,5 @@ p {
   text-align: center;
   justify-content: center;
   background-image: cover;
+  margin-top: 100px;
 }
