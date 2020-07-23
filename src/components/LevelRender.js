@@ -7,8 +7,8 @@ function MapTile(props) {
   switch (props.value) {
     case "B":
       var tile = {
-        x: 0 * 32,
-        y: 0 * 32,
+        x: 4 * 32,
+        y: 4 * 32,
       };
       break;
     case "F1":
@@ -19,7 +19,7 @@ function MapTile(props) {
       break;
     case "I1" :
       var tile = {
-        x: 0 * 32,
+        x: 5 * 32,
         y: 2 * 32,
       };
       break;
@@ -55,19 +55,17 @@ function MapTile(props) {
       break;
     case "VS":
     var tile = {
-      x: 4 * 32,
-      y: 4 * 32,
+      x: 100 * 32,
+      y: 41 * 32,
     };
     break;
     case ("E"):
     var tile = {
-      x: 3 * 32,
-      y: 0 * 32,
+      x: 100 * 32,
+      y: 41 * 32,
     };
     break;
   };
-        console.log(tile)
-
   return (
     <div class="tile">
       {" "}
