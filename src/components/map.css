@@ -73,3 +73,8 @@ p {
   width: 600px;
   justify-content: center;
 }
+
+.aboutlogo {
+  height: 100px;
+  margin-top: 50px;
+}
