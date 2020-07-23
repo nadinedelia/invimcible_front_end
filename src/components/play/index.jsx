@@ -13,8 +13,10 @@ export default function Play() {
           <Player skin="m2" />
           <br></br>
           <br></br>
-          <div className="speech-container">
-            <p> PLEASE PRINT SMTH </p>
+          <div className="input-container">
+          <form class="hidden">
+            <input type="text"></input>
+          </form>
           </div>
         </div>
       </div>
