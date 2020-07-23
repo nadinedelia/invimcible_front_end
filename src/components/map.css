@@ -10,6 +10,9 @@
 
 body {
   background-image: url("https://i.imgur.com/oZ8oRqh.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 .tile {
@@ -75,4 +78,11 @@ p {
 
 .container-right {
   width: 70%;
+}
+
+.background-container {
+  width: 600px;
+  text-align: center;
+  justify-content: center;
+  background-image: cover;
 }
