@@ -1,0 +1,17 @@
+.helpScreen {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 640px;
+  height: 320px;
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.controls {
+  font-size: 20px;
+  text-align: left;
+}
