@@ -57,6 +57,9 @@ export default function About() {
           </table>
         </div>
       </center>
+      <a href="/">
+        <img src={"images/backarrow.png"} className="backarrow" />
+      </a>
     </div>
   );
 }

@@ -8,7 +8,9 @@ export default function Play() {
       <center>
         <img src={"images/logo.png"} className="logo2" />
         <div className="game-container">
-          <div className="support-container"></div>
+          <div className="support-container">
+            <h3> PLEASE PRINT SMTH </h3>
+          </div>
 
           <div className="container-right">
             <div className="zone-container">

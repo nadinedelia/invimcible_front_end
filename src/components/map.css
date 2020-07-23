@@ -87,3 +87,14 @@ p {
 .logo2 {
   height: 100px;
 }
+
+.backarrow {
+  height: 40px;
+  margin-left: 20px;
+}
+
+h3 {
+  color: white;
+  font-size: 15px;
+  font-family: "SFAlien";
+}
