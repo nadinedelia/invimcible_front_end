@@ -10,6 +10,10 @@
 
 body {
   background-image: url("https://i.imgur.com/oZ8oRqh.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  justify-content: center;
 }
 
 .tile {
@@ -30,15 +34,6 @@ body {
   }
 }
 
-.zone-container {
-  /* position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  /* transform: translate(-50%, -50%); */
-  width: 800px;
-}
-
 .map {
   width: 736px;
   height: 417px;
@@ -50,19 +45,21 @@ body {
   border: 3px solid white;
   height: 100px;
   width: 736px;
+  text-align: center;
 }
 
 p {
   color: white;
   font-family: "SFAlien";
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 1.5em;
+  line-height: 1.6;
 }
 
 .game-container {
   display: grid;
   grid-template-columns: 20% auto auto auto;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .support-container {
@@ -73,6 +70,32 @@ p {
   text-align: center;
 }
 
-.container-right {
-  width: 70%;
+.background-container {
+  width: 600px;
+  justify-content: center;
+}
+
+.aboutlogo {
+  height: 100px;
+  margin-top: 50px;
+}
+
+.logo {
+  margin-top: 50px;
+}
+
+.logo2 {
+  height: 100px;
+  margin-top: 10px;
+}
+
+.backarrow {
+  height: 40px;
+  margin-left: 20px;
+}
+
+h3 {
+  color: white;
+  font-size: 15px;
+  font-family: "SFAlien";
 }
