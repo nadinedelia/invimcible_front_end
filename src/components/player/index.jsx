@@ -1,9 +1,9 @@
 import React from "react";
 import Actor from "../actor";
 import useKeyPress from "../../hooks/use-key-press";
-import useWalk from "../../hooks/use-walk"; 
+import useWalk from "../../hooks/use-walk";
 
-export default function Player({ skin }) { 
+export default function Player({ skin, vimMovement }) { 
   const { dir, step, walk, position } = useWalk(3)
   const data = {
     h: 32,
@@ -12,12 +12,14 @@ export default function Player({ skin }) {
 
   useKeyPress((e) => {
     const result = e.key.replace("Key", "").toLowerCase()
-    if(result === "h" || result === "j" || result === "k" || result === "l") {
+    console.log(vimMovement, "player")
+    if((result === "h" || result === "j" || result === "k" || result === "l") && vimMovement) {
     walk(result) 
     console.log(result)
     e.preventDefault();
     }
   })
+
   return (
   <Actor 
   sprite={`/sprites/skins/${skin}.png`} 

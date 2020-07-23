@@ -3,15 +3,21 @@ import Player from "../player";
 import Game from "../Game.js";
 import useKeyPress from "../../hooks/use-key-press";
 
+let vimMovement = true
+
 export default function Play() {
   
-// let colonPress = useKeyPress(":")
-// console.log(colonPress)
+  useKeyPress((key) => {
+    console.log(key.key)
+    if(key.key === ':') {
+      noVimMovement()
+      console.log(vimMovement, "play")
+    }
+  })
 
-// useColon(key) {
-//   if(key === ":")
-// } 
-  
+  function noVimMovement() {
+    vimMovement = false
+  }
   
   return (
     <div className="game-container">
@@ -20,7 +26,7 @@ export default function Play() {
       <div className="container-right">
         <div className="zone-container">
           <Game />
-          <Player skin="m2" />
+          <Player skin="m2" vimMovement={vimMovement} />
           <br></br>
           <br></br>
           <div className="input-container">
