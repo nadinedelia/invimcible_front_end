@@ -36,8 +36,9 @@ body {
 
 .map {
   width: 720px;
-  height: 320px;
+  height: 355px;
   justify-content: center;
+  border: 3px solid white;
 }
 
 .speech-container {
