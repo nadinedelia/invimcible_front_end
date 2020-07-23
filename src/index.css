@@ -1,7 +1,7 @@
 .homescreencontainer .start-btn {
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: #000000;
@@ -15,8 +15,8 @@
 }
 .homescreencontainer .about-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 55%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: #000000;
@@ -30,10 +30,14 @@
 }
 
 #vimGame {
-  margin-top: 0px;
-  max-height: 600px;
+  margin-top: 150px;
+  max-height: 300px;
   border: 3px solid white;
-  opacity: 0.2gi;
+  opacity: 0.5;
+}
+
+#vimGame:hover {
+  opacity: 1;
 }
 
 p1 {
