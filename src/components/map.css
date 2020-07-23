@@ -12,24 +12,21 @@
 
 @media (min-width: 360px) {
   body {
-    font-size: 1.0em;
+    font-size: 1em;
   }
 }
 
 .zone-container {
-  position: fixed;
+  /* position: fixed;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  width: 69%;
+  /* transform: translate(-50%, -50%); */
+  width: 720px;
 }
 
 .map {
-
-  top: 0px;
-  left: 0px;
-  width: 640px;
+  width: 720px;
   height: 320px;
   justify-content: center;
 }
@@ -37,16 +34,20 @@
 .speech-container {
   border: 5px solid red;
   height: 100px;
-  width: 720px
+  width: 720px;
 }
 
 .game-container {
-  height: 100%;
-  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 
 .support-container {
-  border: 5px solid red;
-  width: 30%;
-  height: 60%;
+  border: 5px solid blue;
+  height: 200px;
+  width: 100px;
+}
+
+.container-right {
+  width: 70%;
 }
