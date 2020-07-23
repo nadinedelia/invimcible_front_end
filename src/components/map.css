@@ -22,6 +22,7 @@
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
+  width: 640px;
 }
 
 .map {
@@ -31,4 +32,21 @@
   width: 640px;
   height: 320px;
   justify-content: center;
+}
+
+.speech-container {
+  border: 5px solid red;
+  height: 100px;
+  width: 720px
+}
+
+.game-container {
+  height: 100%;
+  width: 100%;
+}
+
+.support-container {
+  border: 5px solid red;
+  width: 30%;
+  height: 60%;
 }
