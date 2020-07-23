@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "SFAlien";
+  src: url("/fonts/SFAlienEncounters.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "arcadeclassic";
+  src: url("/fonts/arcadeclassic.regular.tff") format("truetype");
+}
+
+body {
+  background-image: url("https://i.imgur.com/oZ8oRqh.png");
+}
+
 .tile {
   display: inline-flex;
   background-color: green;
@@ -10,10 +24,57 @@
   height: 32px;
 }
 
+@media (min-width: 360px) {
+  body {
+    font-size: 1em;
+  }
+}
+
+.zone-container {
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  /* transform: translate(-50%, -50%); */
+  width: 800px;
+}
+
 .map {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 640px;
-  height: 320px;
+  width: 736px;
+  height: 417px;
+  justify-content: center;
+  border: 3px solid white;
+}
+
+.speech-container {
+  border: 3px solid white;
+  height: 100px;
+  width: 736px;
+  background-color: #6d6d6d;
+}
+
+p {
+  color: white;
+  font-family: "SFAlien";
+  font-weight: 100;
+  font-size: 2.5em;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 20% auto auto auto;
+  margin-top: 100px;
+}
+
+.support-container {
+  border: 3px solid white;
+  height: 300px;
+  width: 200px;
+  margin-left: 50px;
+  text-align: center;
+  background-color: #3d3d3d;
+}
+
+.container-right {
+  width: 70%;
 }
