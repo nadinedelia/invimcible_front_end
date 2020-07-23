@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 import LevelRender from "./LevelRender.js";
 
-// // processing a tile
-// function MapTile(props) {
-//   console.log(props)
-//   return props.value;
-// }
-//
-// // processing a row
-// function MapRows(props) {
-//   return props.tiles.map((tile) => <MapTile value={tile} />);
-// }
-//
-// // processing the map
-// function Map(props) {
-//   return ( props.tiles.map((row) => (
-//     <div>
-//       <MapRows tiles={row} />
-//     </div>
-//   )))
-// }
+// processing a tile
+function MapTile(props) {
+  console.log(props)
+  return props.value;
+}
+
+// processing a row
+function MapRows(props) {
+  return props.tiles.map((tile) => <MapTile value={tile} />);
+}
+
+// processing the map
+function Map(props) {
+  return ( props.tiles.map((row) => (
+    <div>
+      <MapRows tiles={row} />
+    </div>
+  )))
+}
 
 class Game extends React.Component {
   constructor() {
