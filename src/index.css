@@ -38,6 +38,10 @@
   text-align: center;
 }
 
+td {
+  padding: 10px;
+}
+
 .homescreencontainer .start-btn:hover .about-btn:hover {
   background-color: black;
 }
@@ -93,4 +97,12 @@ body {
   margin-top: 50px;
   max-height: 600px;
   border: 3px solid white;
+}
+
+p1 {
+  font-family: "SFAlien";
+}
+
+a {
+  color: grey;
 }

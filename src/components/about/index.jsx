@@ -13,31 +13,48 @@ export default function About() {
           </p>
           <p> Click on our names to see our other work. </p>
 
+          <table>
+            <tr>
+              
           <div class="githubs">
+          <td>
             <a href="https://github.com/sofyloafy">
-              <p>Sophie Brown</p>
+              <p1>Sophie Brown</p1>
             </a>
+            </td>
 
+            <td>
             <a href="https://github.com/Sumner1185">
-              <p>Al Sumner</p>
+              <p1>Al Sumner</p1>
             </a>
+            </td>
 
+            <td>
             <a href="https://github.com/tristanlangford">
-              <p>Tristan Langford</p>
+              <p1>Tristan Langford</p1>
             </a>
+            </td>
 
+            <td>
             <a href="https://github.com/raerachael">
-              <p>Rachael Ewins</p>
+              <p1>Rachael Ewins</p1>
             </a>
+            </td>
 
+            <td>
             <a href="https://github.com/nadinedelia">
-              <p>Nadine Loepfe</p>
+              <p1>Nadine Loepfe</p1>
             </a>
+            </td>
 
+            <td>
             <a href="https://github.com/katie-mcdonagh">
-              <p>Katie McDonagh</p>
+              <p1>Katie McDonagh</p1>
             </a>
+            </td>
           </div>
+          </tr>
+          </table>
         </div>
       </center>
     </div>
