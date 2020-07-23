@@ -87,11 +87,21 @@ p {
 .logo2 {
   height: 100px;
   margin-top: 10px;
+  opacity: 0.75;
+}
+
+.logo2:hover {
+  opacity: 1;
 }
 
 .backarrow {
   height: 40px;
   margin-left: 20px;
+  opacity: 0.75;
+}
+
+.backarrow:hover {
+  opacity: 1;
 }
 
 h3 {
