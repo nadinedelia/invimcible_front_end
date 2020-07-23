@@ -11,8 +11,12 @@ export default function Player({ skin }) {
   };
 
   useKeyPress((e) => {
-    walk(e.key.replace("Key", "").toLowerCase()) 
+    const result = e.key.replace("Key", "").toLowerCase()
+    if(result === "h" || result === "j" || result === "k" || result === "l") {
+    walk(result) 
+    console.log(result)
     e.preventDefault();
+    }
   })
   return (
   <Actor 

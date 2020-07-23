@@ -9,12 +9,12 @@ describe('Home', () => {
   });
   it('renders a START GAME button', () => {
     const wrapper = shallow(<Home />);
-    const info = <a href='/play'><button class="start-btn">START GAME</button></a>
+    const info = <a href='/play'><button className="start-btn">START GAME</button></a>
     expect(wrapper.contains(info)).toEqual(true);
   })
   it('renders an ABOUT button', () => {
     const wrapper = shallow(<Home />);
-    const info = <a href='./about'><button class="about-btn">ABOUT</button></a>
+    const info = <a href='./about'><button className="about-btn">ABOUT</button></a>
     expect(wrapper.contains(info)).toEqual(true);
   })
 })

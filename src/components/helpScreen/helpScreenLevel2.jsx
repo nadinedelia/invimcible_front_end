@@ -1,6 +1,6 @@
 import Output from "./helpScreen"
 
-export default function HelpScreenLevel2({ }) {
+export default function HelpScreenLevel2() {
   const movement = [
     "h: left",
     "j: down",
