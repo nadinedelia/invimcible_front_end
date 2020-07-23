@@ -13,7 +13,9 @@ export default function Play() {
           <Player skin="m2" />
           <br></br>
           <br></br>
-          <div className="speech-container"></div>
+          <div className="speech-container">
+            <p> PLEASE PRINT SMTH </p>
+          </div>
         </div>
       </div>
     </div>

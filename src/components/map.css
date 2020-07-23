@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "SFAlien";
+  src: url("/fonts/SFAlienEncounters.ttf") format("truetype");
+}
+
+body {
+  background-color: black;
+}
+
 .tile {
   display: inline-flex;
   background-color: green;
@@ -32,20 +41,33 @@
 }
 
 .speech-container {
-  border: 5px solid red;
+  margin-top: 30px;
+  border: 3px solid white;
   height: 100px;
   width: 720px;
+  background-color: #6d6d6d;
+}
+
+p {
+  color: white;
+  font-family: "SFAlien";
+  font-weight: 100;
+  font-size: 2.5em;
 }
 
 .game-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 20% auto auto auto;
+  margin-top: 100px;
 }
 
 .support-container {
-  border: 5px solid blue;
-  height: 200px;
-  width: 100px;
+  border: 3px solid white;
+  height: 300px;
+  width: 200px;
+  margin-left: 50px;
+  text-align: center;
+  background-color: #3d3d3d;
 }
 
 .container-right {
