@@ -8,6 +8,10 @@
   height: auto;
 }
 
+.map {
+  justify-content: center;
+}
+
 .homescreencontainer .start-btn {
   position: absolute;
   top: 50%;
