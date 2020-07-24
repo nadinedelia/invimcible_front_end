@@ -1,7 +1,9 @@
+/* VIM LOGO ON TOP */
 .logo {
   margin-top: 50px;
 }
 
+/* START BUTTON */
 .homescreencontainer .start-btn {
   position: absolute;
   top: 40%;
@@ -17,6 +19,8 @@
   text-align: center;
   font-family: "SFAlien";
 }
+
+/* ABOUT BUTTON */
 .homescreencontainer .about-btn {
   position: absolute;
   top: 40%;
@@ -33,6 +37,7 @@
   font-family: "SFAlien";
 }
 
+/* THE ACTUAL START PICTURE WITH ALS HAIR SALON */
 #vimGame {
   margin-top: 150px;
   max-height: 300px;
@@ -40,6 +45,7 @@
   opacity: 0.5;
 }
 
+/* ALS HAIR SALON PICTURE ON HOVER */
 #vimGame:hover {
   opacity: 1;
 }

@@ -7,22 +7,6 @@ body {
   justify-content: center;
 }
 
-/* GITHUB NAMES FONT */
-p1 {
-  font-family: "SFAlien";
-}
-
-/* LINK */
-a {
-  color: grey;
-}
-
-/* TABLE */
-td {
-  padding: 10px;
-  text-align: center;
-}
-
 /* ------------- FONTS ----------------- */
 
 @font-face {

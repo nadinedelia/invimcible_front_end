@@ -1,5 +1,6 @@
 /* GAME ITSELF */
 
+/* A SINGLE TILE ON WHICH VIM MOVES */
 .tile {
   display: inline-flex;
   background-color: green;
@@ -7,11 +8,13 @@
   width: 32px;
 }
 
+/* A ROW OF TILES */
 .row {
   border: none;
   height: 32px;
 }
 
+/* THE WHOLE GAME AREA */
 .map {
   width: 736px;
   height: 417px;
@@ -21,14 +24,14 @@
 
 /* ----------------- CONTAINERS --------------- */
 
-/* CONTAINER AROUND WHOLE SCREEN */
+/* GRID CONTAINER AROUND WHOLE SCREEN */
 .game-container {
   display: grid;
   grid-template-columns: 20% auto auto auto;
   margin-top: 20px;
 }
 
-/* CONTAINER RIGHT WITH GAME AND SPEECH */
+/* CONTAINER RIGHT CONTAINING GAME MAP AND SPEECH BOX */
 .speech-container {
   border: 3px solid white;
   height: 100px;
@@ -36,7 +39,7 @@
   text-align: center;
 }
 
-/* CONTAINER LEFT SIDE */
+/* CONTAINER LEFT SIDE WITH CLUES ON HOW TO NAVIGATE */
 .support-container {
   border: 3px solid white;
   height: 300px;
@@ -58,7 +61,7 @@
 
 /* ---------------- FONTS ---------------- */
 
-/* SPEECH BOX */
+/* SPEECH BOX ON BOTTOM LARGER FONT */
 p {
   color: white;
   font-family: "SFAlien";
@@ -67,7 +70,7 @@ p {
   line-height: 1.6;
 }
 
-/* SUPPORT BOX LEFT */
+/* SUPPORT BOX LEFT SIDE SMALLER FONT */
 h3 {
   color: white;
   font-size: 15px;
