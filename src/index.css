@@ -1,43 +1,19 @@
-.homescreencontainer .start-btn {
-  position: absolute;
-  top: 40%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #000000;
-  color: #0adc00;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: 2px solid white;
-  cursor: pointer;
-  text-align: center;
+@font-face {
   font-family: "SFAlien";
-}
-.homescreencontainer .about-btn {
-  position: absolute;
-  top: 40%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #000000;
-  color: #0adc00;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: 2px solid white;
-  cursor: pointer;
-  text-align: center;
-  font-family: "SFAlien";
+  src: url("/fonts/SFAlienEncounters.ttf") format("truetype");
 }
 
-#vimGame {
-  margin-top: 150px;
-  max-height: 300px;
-  border: 3px solid white;
-  opacity: 0.5;
+@font-face {
+  font-family: "arcadeclassic";
+  src: url("/fonts/arcadeclassic.regular.tff") format("truetype");
 }
 
-#vimGame:hover {
-  opacity: 1;
+body {
+  background-image: url("https://i.imgur.com/oZ8oRqh.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  justify-content: center;
 }
 
 p1 {
@@ -51,4 +27,12 @@ a {
 td {
   padding: 10px;
   text-align: center;
+}
+
+/* ------------ RESPONSIVENESS --------------- */
+
+@media (min-width: 360px) {
+  body {
+    font-size: 1em;
+  }
 }

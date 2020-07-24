@@ -1,0 +1,19 @@
+.background-container {
+  width: 600px;
+  justify-content: center;
+}
+
+.aboutlogo {
+  height: 100px;
+  margin-top: 50px;
+}
+
+.backarrow {
+  height: 40px;
+  margin-left: 20px;
+  opacity: 0.75;
+}
+
+.backarrow:hover {
+  opacity: 1;
+}

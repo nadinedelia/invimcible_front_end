@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./map.css";
+import "./play/play.css";
 import TileSprite from "./TileRender.js";
 
 // processing a tile
