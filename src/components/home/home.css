@@ -1,0 +1,51 @@
+/* VIM LOGO ON TOP */
+.logo {
+  margin-top: 50px;
+}
+
+/* START BUTTON */
+.homescreencontainer .start-btn {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #000000;
+  color: #0adc00;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid white;
+  cursor: pointer;
+  text-align: center;
+  font-family: "SFAlien";
+}
+
+/* ABOUT BUTTON */
+.homescreencontainer .about-btn {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #000000;
+  color: #0adc00;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid white;
+  cursor: pointer;
+  text-align: center;
+  font-family: "SFAlien";
+}
+
+/* THE ACTUAL START PICTURE WITH ALS HAIR SALON */
+#vimGame {
+  margin-top: 150px;
+  max-height: 300px;
+  border: 3px solid white;
+  opacity: 0.5;
+}
+
+/* ALS HAIR SALON PICTURE ON HOVER */
+#vimGame:hover {
+  opacity: 1;
+}

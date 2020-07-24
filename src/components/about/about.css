@@ -1,0 +1,43 @@
+/* CONTAINER AROUND PAGE THAT SPECIFIES WIDTH OF TEXT */
+.background-container {
+  width: 600px;
+  justify-content: center;
+}
+
+/* LOGO ON TOP OF THE PAGE */
+.aboutlogo {
+  height: 100px;
+  margin-top: 50px;
+}
+
+/* -------------- FONTS -------------- */
+
+/* GITHUB NAMES FONT */
+p1 {
+  font-family: "SFAlien";
+}
+
+/* LINK TO OUR GITHUBS */
+a {
+  color: grey;
+}
+
+/* TABLE ON WHICH OUR GITHUB NAMES GET CENTERED */
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* ------------ BUTTON ------------- */
+
+/* ARROW BOTTOM LEFT TAKING YOU BACK TO HOME SCREEN  */
+.backarrow {
+  height: 40px;
+  margin-left: 20px;
+  opacity: 0.75;
+}
+
+/* ARROW BOTTOM LEFT ON HOVER */
+.backarrow:hover {
+  opacity: 1;
+}
