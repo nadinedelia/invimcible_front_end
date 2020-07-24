@@ -13,7 +13,7 @@ export default function Player({ skin, vimMovement }) {
   useKeyPress((e) => {
     const result = e.key.replace("Key", "").toLowerCase()
     console.log(vimMovement, "player")
-    if((result === "h" || result === "j" || result === "k" || result === "l") && vimMovement) {
+    if((result === "h" || result === "j" || result === "k" || result === "l") && vimMovement["canMove"]) {
     walk(result) 
     console.log(result)
     e.preventDefault();

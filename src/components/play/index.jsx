@@ -3,21 +3,22 @@ import Player from "../player";
 import Game from "../Game.js";
 import useKeyPress from "../../hooks/use-key-press";
 
-let vimMovement = true
+var vimMovement = {canMove: true}
 
 export default function Play() {
   
   useKeyPress((key) => {
     console.log(key.key)
     if(key.key === ':') {
-      noVimMovement()
+      noVimMovement("canMove")
       console.log(vimMovement, "play")
     }
   })
 
-  function noVimMovement() {
-    vimMovement = false
+  function noVimMovement(canMove) {
+    vimMovement[canMove] = !vimMovement[canMove]
   }
+  console.log(vimMovement, "I'm outside the function")
   
   return (
     <div className="game-container">
