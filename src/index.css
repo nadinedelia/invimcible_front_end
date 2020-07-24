@@ -1,13 +1,4 @@
-@font-face {
-  font-family: "SFAlien";
-  src: url("/fonts/SFAlienEncounters.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "arcadeclassic";
-  src: url("/fonts/arcadeclassic.regular.tff") format("truetype");
-}
-
+/* --------------- OVERALL SETTING FOR WHOLE PAGE ----------------- */
 body {
   background-image: url("https://i.imgur.com/oZ8oRqh.png");
   background-size: cover;
@@ -16,17 +7,32 @@ body {
   justify-content: center;
 }
 
+/* GITHUB NAMES FONT */
 p1 {
   font-family: "SFAlien";
 }
 
+/* LINK */
 a {
   color: grey;
 }
 
+/* TABLE */
 td {
   padding: 10px;
   text-align: center;
+}
+
+/* ------------- FONTS ----------------- */
+
+@font-face {
+  font-family: "SFAlien";
+  src: url("/fonts/SFAlienEncounters.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "arcadeclassic";
+  src: url("/fonts/arcadeclassic.regular.tff") format("truetype");
 }
 
 /* ------------ RESPONSIVENESS --------------- */
