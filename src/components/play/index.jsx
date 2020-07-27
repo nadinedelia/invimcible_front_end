@@ -1,4 +1,4 @@
-
+import VimCommand from "../vimCommand"
 import Player from "../player";
 import Game from "../Game.js";
 import Help from '../helpScreen/help'
@@ -10,18 +10,21 @@ var vimMovement = {canMove: true}
 
 export default function Play() {
   const [showHelp, setShowHelp] = useState(false);
+  const [showVimCommand, setShowVimCommand] = useState(false);
 
     function toggleShowHelp() {
       setShowHelp(!showHelp)
+     }
+
+     function toggleShowVimCommand() {
+      setShowVimCommand(!showVimCommand)
      }
   
   useKeyPress((key) => {
     console.log(key.key)
     if(key.key === ':') {
       noVimMovement("canMove")
-      toggleShowHelp()
-      console.log("help", showHelp)
-      // makeVisible('input-form')
+      toggleShowVimCommand()
     }
   })
 
@@ -47,6 +50,7 @@ export default function Play() {
           <Game />
           <Player skin="m2" vimMovement={vimMovement} />
           <br></br>
+          { showVimCommand ? <VimCommand /> : null }
           <br></br>
         </div>
       </div>

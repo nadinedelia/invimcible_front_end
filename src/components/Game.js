@@ -28,7 +28,22 @@ class Game extends React.Component {
       error: null,
       isLoaded: false,
       tiles: [],
-      showHelp: false
+      showHelp: false,
+      tiles: [
+      ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
+        ['B', 'VS', 'F1', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'F1', 'F1', 'F1', 'F1', 'F1', 'F1', 'F1', 'I1', 'F1', 'F1', 'F1', 'F1', 'F1', 'E', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'F1', 'F1', 'B', 'B', 'B', 'B', 'B', 'B', 'P1', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B','B']
+    ]
     };
     // placeholder for API response
     // this.state.isLoaded = true;
@@ -44,38 +59,32 @@ class Game extends React.Component {
     });
   }
 
-  componentDidMount() {
-    // API connection code
-    fetch(
-      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            tiles: [...result.level1],
-          });
-          console.log(this.state.tiles);
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
-  }
+  // componentDidMount() {
+  //   // API connection code
+  //   fetch(
+  //     "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
+  //   )
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           tiles: [...result.level1],
+  //         });
+  //         console.log(this.state.tiles);
+  //       },
+  //       (error) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error,
+  //         });
+  //       }
+  //     );
+  // }
+
 
   render() {
     const { error, isLoaded, tiles } = this.state;
-    if (error) {
-      // if error in connection
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      // if API hasn't returned data yet
-      return <div>Loading...</div>;
-    } else {
       return (
         <section>
           <LevelRender props={tiles} />
@@ -83,6 +92,6 @@ class Game extends React.Component {
       );
     }
   }
-}
+
 
 export default Game;
