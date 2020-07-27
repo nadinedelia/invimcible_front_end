@@ -5,6 +5,7 @@ import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
 import "./styles.css";
 
 function getTileSprite(type) {
+  console.log(type)
   switch (type) {
     case "F1":
       return "grass";
@@ -45,7 +46,8 @@ function MapRow(props) {
 }
 
 function Map(props) {
-  if (props.tiles === "not yet") {
+  console.log(props, "map")
+  if (props.loaded === false) {
     return "Waiting..."
   }
   console.log(props, "Hello!")

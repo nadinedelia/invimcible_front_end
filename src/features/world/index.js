@@ -12,14 +12,6 @@ api.makeRequest()
 
 
 function World(props) {
-  // console.log(api.TileMatrix())
-  store.dispatch({
-    type: "ADD_TILES",
-    payload: {
-      tiles: api.TileMatrix(),
-    },
-  });
-
   return (
     // console.log(this, "return world"),
     <div

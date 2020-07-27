@@ -1,5 +1,6 @@
 const initialState = {
   tiles: [],
+  loaded: false
 }
 
 const mapReducer = (state=initialState, action) => {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import store from "../config/store";
 
 class API extends React.Component {
   constructor() {
@@ -19,26 +20,35 @@ class API extends React.Component {
       .then(
         (result) => {
           console.log(result, "hi")
-          this.state = {
-            isLoaded: true,
-            tiles: [...result.level1Data.mapArray],
-            startingPoint: result.level1Data.startingPoint
-          };
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
+          store.dispatch({
+            type: "ADD_TILES",
+            payload: {
+              loaded: true,
+              tiles: [...result.level1Data.mapArray],
+              startingPoint: result.level1Data.startingPoint
+            },
+          })
+          // });
+          // this.state = {
+          //   isLoaded: true,
+          //   tiles: [...result.level1Data.mapArray],
+          //   startingPoint: result.level1Data.startingPoint
+          // };
         }
+        // (error) => {
+        //   this.setState({
+        //     isLoaded: true,
+        //     error,
+        //   });
+        // }
       );
   }
 
-  TileMatrix() {
-    if (this.state.isLoaded === true) {
-      return this.state.tiles
-    } else { return "not yet"}
-  }
+  // TileMatrix() {
+  //   if (this.state.isLoaded === true) {
+  //     return this.state.tiles
+  //   } else { return "not yet"}
+  // }
 }
 
 export default API;
