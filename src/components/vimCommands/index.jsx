@@ -1,11 +1,14 @@
-import React from "react"
+import React, { Component, PropTypes } from 'react';
 import { render } from "@testing-library/react"
 import "./vimCommands.css"
+import { connect } from 'react-redux';
+import store from "../../config/store";
+
 export default class VimCommand extends React.Component {
   constructor () {
     super();
     this.state = {
-        prefix: ':'
+        prefix: ':',
     }
   }
   handleChange(e) {
@@ -20,8 +23,7 @@ export default class VimCommand extends React.Component {
           <input
             type="text"
             defaultValue={this.state.prefix}
-            value = {this.state.value}
-            onChange = {this.handleChange}
+            onChange = {this.handleChange.bind(this)}
          />
       </div>
   }

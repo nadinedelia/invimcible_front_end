@@ -1,7 +1,11 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
+import React, { Component, useState } from "react";
 
 export default function handleMovement(player) {
+
+  let canMove = true
+
   function getNewPosition(oldPos, direction) {
     switch (direction) {
       case "WEST":
@@ -54,7 +58,7 @@ export default function handleMovement(player) {
     return nextTile != 'B';
   }
 
-  function dispatchMove(direction, newPos) {
+  function dispatchMove(direction, newPos, moveAbilty) {
     const walkIndex = getWalkIndex();
     store.dispatch({
       type: "MOVE_PLAYER",
@@ -67,12 +71,24 @@ export default function handleMovement(player) {
     });
   }
 
+ function VimCantMove() {
+   canMove = false
+ }
+
+ function VimMoves() {
+  canMove = true
+}
+  // toggle movement changes true/false
+
   function attemptMove(direction) {
+    console.log(canMove)
+    
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
 
-    if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos))
+    if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos) && canMove){
       dispatchMove(direction, newPos);
+    }
   }
 
   function handleKeyDown(e) {
@@ -87,8 +103,12 @@ export default function handleMovement(player) {
         return attemptMove("EAST");
       case 'j':
         return attemptMove("SOUTH");
+      case 'Escape':
+        return VimMoves()
+      case ':':
+        return VimCantMove()
       default:
-        console.log(e.keyCode);
+        return
     }
   }
 
