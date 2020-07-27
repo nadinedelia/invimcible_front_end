@@ -21,7 +21,8 @@ class API extends React.Component {
           console.log(result, "hi")
           this.state = {
             isLoaded: true,
-            tiles: [...result.level1],
+            tiles: [...result.level1Data.mapArray],
+            startingPoint: result.level1Data.startingPoint
           };
         },
         (error) => {

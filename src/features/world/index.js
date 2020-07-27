@@ -2,11 +2,18 @@ import React from "react";
 import Map from "../map";
 import Player from "../player";
 import "./world.css";
+import API from "../../components/API"
 
-import { tiles } from "../../maps/level_1";
+import { tiles } from "../../maps/Level_1";
 import store from "../../config/store";
 
+var api = new API
+api.makeRequest()
+
+console.log(api, "outside World")
+
 function World(props) {
+  console.log(api, "inside world")
   store.dispatch({
     type: "ADD_TILES",
     payload: {
@@ -15,6 +22,7 @@ function World(props) {
   });
 
   return (
+    console.log(this, "return world"),
     <div
       style={{
         position: "relative",
