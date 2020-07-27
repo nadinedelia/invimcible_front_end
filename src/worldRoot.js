@@ -22,7 +22,7 @@ function WorldRoot() {
         return setShowVimCommand(false)
       case "Enter":
         if (displayVimCommand) {
-          if (store.getState().vimCommand === ":h") {
+          if (store.getState().vimCommand === ":help") {
             return setShowHelp(true)
           }
         }
