@@ -6,13 +6,13 @@ import "./styles.css";
 
 function getTileSprite(type) {
   switch (type) {
-    case 'F1':
+    case "F1":
       return "grass";
     // case 'Something':
     //   return "walkable-tree";
     // case 'Something':
     //   return "chest";
-    case 'B':
+    case "B":
       return "rock";
     // case 'Something':
     //   return "tree";
