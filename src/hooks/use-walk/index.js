@@ -37,6 +37,10 @@ export default function useWalk(maxSteps) {
     setStep((prev) => (prev < maxSteps - 1 ? prev + 1 : 0));
   }
 
+  function isBlocked(dir) {
+    return true;
+  }
+
   function move(dir) {
     setPosition((prev) => ({
       x: prev.x + modifier[dir].x,
