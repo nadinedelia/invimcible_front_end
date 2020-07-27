@@ -6,10 +6,6 @@ import World from "./features/world"
 import HelpScreenLevel1 from "./components/helpScreen/helpScreenLevel1.jsx"
 import HelpScreenLevel2 from "./components/helpScreen/helpScreenLevel2.jsx"
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Player from "./components/player"
-
-import Game from './components/Game.js';
-
 
 export default function App() {
   return (
