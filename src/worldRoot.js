@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import World from "./features/world";
+import API from "./components/API"
+
+
+var api = new API
+api.makeRequest()
+
+console.log(api, "outside World")
+
 
 function WorldRoot() {
   return (

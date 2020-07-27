@@ -34,6 +34,7 @@ function MapTile(props) {
 }
 
 function MapRow(props) {
+  console.log(props, "Hello!")
   return (
     <div className="row">
       {props.tiles.map((tile) => (
@@ -44,6 +45,10 @@ function MapRow(props) {
 }
 
 function Map(props) {
+  if (props.tiles === "not yet") {
+    return "Waiting..."
+  }
+  console.log(props, "Hello!")
   return (
     <div
       style={{
