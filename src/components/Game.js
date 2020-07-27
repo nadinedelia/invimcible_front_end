@@ -47,7 +47,7 @@ class Game extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            tiles: [...result.level1],
+            tiles: [...result.level1Data.mapArray],
           });
           console.log(this.state.tiles);
         },
