@@ -31,6 +31,11 @@ export default function useWalk(maxSteps) {
         modifier[dir].x + position.x < 1082 &&
         modifier[dir].x + position.x > 351
       )
+        console.log(dir, "dir")
+        console.log(modifier[dir].y, "modifier[dir].y")
+        console.log(modifier[dir].x, "modifier[dir].x")
+        console.log(position.y, "position.y")
+        console.log(position.x, "position.x")
         move(dir);
       return directions[dir];
     });
