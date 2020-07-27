@@ -40,7 +40,7 @@ export default function Play() {
 
   return (
     <div className="game-container">
-      <div className="support-container"></div>
+      <div className="support-container">
       <div className="container-right">
         <div className="zone-container">
         { showHelp ? <Help /> : null }
@@ -50,6 +50,7 @@ export default function Play() {
           <br></br>
         </div>
       </div>
-    </div>
+      </div>
+      </div>
   );
 }
