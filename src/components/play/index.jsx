@@ -8,11 +8,19 @@ import useKeyPress from "../../hooks/use-key-press";
 var vimMovement = {canMove: true}
 
 export default function Play() {
+    let showHelp = true
+
+
+  function togglePopup() {
+    showHelp = !showHelp
+    }
   
   useKeyPress((key) => {
     console.log(key.key)
     if(key.key === ':') {
       noVimMovement("canMove")
+      togglePopup()
+      console.log("help", showHelp)
       // makeVisible('input-form')
     }
   })
@@ -35,13 +43,11 @@ export default function Play() {
       <div className="support-container"></div>
       <div className="container-right">
         <div className="zone-container">
+        { showHelp ? <Help /> : null }
           <Game />
           <Player skin="m2" vimMovement={vimMovement} />
           <br></br>
           <br></br>
-          <div className="input-container">
-          <Help level = '1' display = {vimMovement['canMove']} />
-          </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@
   padding: 20px;
   width: 640px;
   height: 320px;
+  position: absolute;
+  margin: auto;
 }
 
 h2 {
