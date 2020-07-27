@@ -17,8 +17,16 @@ export default function Play() {
      }
 
      function toggleShowVimCommand() {
-      setShowVimCommand(!showVimCommand)
+      setShowVimCommand(true)
      }
+
+     useKeyPress((key) => {
+      console.log(key.key)
+      if(key.key === 'Escape') {
+        noVimMovement("canMove")
+        setShowVimCommand(false)
+      }
+    })
   
   useKeyPress((key) => {
     console.log(key.key)
