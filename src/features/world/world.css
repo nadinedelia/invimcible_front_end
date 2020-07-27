@@ -16,8 +16,8 @@
 
 /* THE WHOLE GAME AREA */
 .map {
-  width: 736px;
-  height: 417px;
+  width: 800px;
+  height: 480px;
   justify-content: center;
   border: 3px solid white;
 }

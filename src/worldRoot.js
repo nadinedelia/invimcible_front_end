@@ -1,21 +1,7 @@
-import React from "react";
-import Player from "../player";
-import Game from "../Game.js";
-import API from "../API.js"
+import React, { Component } from "react";
+import World from "./features/world";
 
-var api = new API()
-api.makeRequest()
-
-setTimeout(function (){
-
-console.log(api.TileMatrix(), "delay")
-  // Something you want delayed.
-
-}, 5000)
-console.log(api.TileMatrix(), "no delay")
-
-export default function Play() {
-
+function WorldRoot() {
   return (
     <div className="super-container">
       <center>
@@ -29,10 +15,7 @@ export default function Play() {
 
           <div className="container-right">
             <div className="zone-container">
-              <Game />
-              <Player skin="m2" />
-              <br></br>
-              <br></br>
+              <World />
               <div className="speech-container">
                 <p> PLEASE PRINT SMTH </p>
               </div>
@@ -43,3 +26,5 @@ export default function Play() {
     </div>
   );
 }
+
+export default WorldRoot;
