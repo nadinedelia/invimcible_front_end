@@ -6,16 +6,16 @@ import "./styles.css";
 
 function getTileSprite(type) {
   switch (type) {
-    case 0:
+    case 'F1':
       return "grass";
-    case 3:
-      return "walkable-tree";
-    case 4:
-      return "chest";
-    case 5:
+    // case 'Something':
+    //   return "walkable-tree";
+    // case 'Something':
+    //   return "chest";
+    case 'B':
       return "rock";
-    case 6:
-      return "tree";
+    // case 'Something':
+    //   return "tree";
     default:
       console.log("No tiles");
   }
@@ -49,7 +49,7 @@ function Map(props) {
       style={{
         position: "relative",
         top: "0px",
-        left: "0px",
+        left: "-32px",
         width: MAP_WIDTH,
         height: MAP_HEIGHT,
         backgroundColor: "#42b842",

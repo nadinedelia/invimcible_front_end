@@ -22,16 +22,16 @@ export default function handleMovement(player) {
       case "SOUTH":
         return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 0}px`;
       case "EAST":
-        return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
-      case "WEST":
         return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 2}px`;
-      case "NORTH":
+      case "WEST":
         return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 3}px`;
+      case "NORTH":
+        return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
       default:
         console.log(direction);
     }
   }
-
+  
   function getWalkIndex() {
     const walkIndex = store.getState().player.walkIndex;
     return walkIndex >= 2 ? 0 : walkIndex + 1;
@@ -51,7 +51,7 @@ export default function handleMovement(player) {
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
     const nextTile = tiles[y][x];
-    return nextTile < 5;
+    return nextTile != 'B';
   }
 
   function dispatchMove(direction, newPos) {
@@ -78,14 +78,14 @@ export default function handleMovement(player) {
   function handleKeyDown(e) {
     e.preventDefault();
 
-    switch (e.keyCode) {
-      case 37:
+    switch (e.key) {
+      case 'h':
         return attemptMove("WEST");
-      case 38:
+      case 'j':
         return attemptMove("NORTH");
-      case 39:
+      case 'l':
         return attemptMove("EAST");
-      case 40:
+      case 'k':
         return attemptMove("SOUTH");
       default:
         console.log(e.keyCode);
