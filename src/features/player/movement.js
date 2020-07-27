@@ -92,7 +92,7 @@ export default function handleMovement(player) {
   }
 
   function handleKeyDown(e) {
-    e.preventDefault();
+    if(canMove == true) e.preventDefault();
 
     switch (e.key) {
       case 'h':
