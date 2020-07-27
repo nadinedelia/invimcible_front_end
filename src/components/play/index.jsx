@@ -1,25 +1,25 @@
-import React from "react";
+
 import Player from "../player";
 import Game from "../Game.js";
 import Help from '../helpScreen/help'
 import useKeyPress from "../../hooks/use-key-press";
+import React, { useState } from 'react';
 // import $ from 'jquery';
 
 var vimMovement = {canMove: true}
 
 export default function Play() {
-    let showHelp = true
+  const [showHelp, setShowHelp] = useState(false);
 
-
-  function togglePopup() {
-    showHelp = !showHelp
-    }
+    function toggleShowHelp() {
+      setShowHelp(!showHelp)
+     }
   
   useKeyPress((key) => {
     console.log(key.key)
     if(key.key === ':') {
       noVimMovement("canMove")
-      togglePopup()
+      toggleShowHelp()
       console.log("help", showHelp)
       // makeVisible('input-form')
     }
