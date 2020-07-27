@@ -3,7 +3,7 @@ import Map from "../map";
 import Player from "../player";
 import "./world.css";
 
-import { tiles } from "../../maps/level_1";
+import { tiles } from "../../maps/Level_1";
 import store from "../../config/store";
 
 function World(props) {
