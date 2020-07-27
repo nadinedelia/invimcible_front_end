@@ -6,6 +6,7 @@ import store from "./config/store";
 
 function WorldRoot() {
 
+  const [displayHelp, setShowHelp] = useState(false);
   const [displayVimCommand, setShowVimCommand] = useState(false);
 
    function toggleShowVimCommand() {
@@ -17,13 +18,16 @@ function WorldRoot() {
       case ":":
         return toggleShowVimCommand()
       case "Escape": 
+        setShowHelp(false)
         return setShowVimCommand(false)
       case "Enter":
         if (displayVimCommand) {
-          return console.log(VimCommand)
-        } else { return }
-     }
-   }
+          if (store.getState().vimCommand === ":h") {
+            return setShowHelp(true)
+          }
+        }
+    }
+  }
 
   window.addEventListener("keydown", (e) => {
     handleKeyDown(e);
@@ -43,6 +47,7 @@ function WorldRoot() {
 
           <div className="container-right">
             <div className="zone-container">
+              { displayHelp ? <Help /> : null}
               <World />
               { displayVimCommand ? <VimCommand /> : null }
               <div className="speech-container">
