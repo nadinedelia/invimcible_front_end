@@ -1,24 +1,35 @@
 import React from "react";
 import Player from "../player";
 import Game from "../Game.js";
+import Help from '../helpScreen/help'
 import useKeyPress from "../../hooks/use-key-press";
+// import $ from 'jquery';
 
-let vimMovement = true
+var vimMovement = {canMove: true}
 
 export default function Play() {
   
   useKeyPress((key) => {
     console.log(key.key)
     if(key.key === ':') {
-      noVimMovement()
-      console.log(vimMovement, "play")
+      noVimMovement("canMove")
+      // makeVisible('input-form')
     }
   })
 
-  function noVimMovement() {
-    vimMovement = false
+  function noVimMovement(canMove) {
+    vimMovement[canMove] = !vimMovement[canMove]
   }
-  
+
+  // function makeVisible(id) {
+  //   $(`${id}`).attr('class', 'visible');
+  // }
+
+  // function makeInvisible(id) {
+  //   $(`${id}`).attr('class', 'hidden');
+  // }
+
+
   return (
     <div className="game-container">
       <div className="support-container">
@@ -29,9 +40,7 @@ export default function Play() {
           <br></br>
           <br></br>
           <div className="input-container">
-          <form class="hidden">
-            <input type="text"></input>
-          </form>
+          <Help level = '1' display = {vimMovement['canMove']} />
           </div>
           </div>
         </div>
