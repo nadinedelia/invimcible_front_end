@@ -21,8 +21,7 @@ export default function Play() {
   
   return (
     <div className="game-container">
-      <div className="support-container"></div>
-
+      <div className="support-container">
       <div className="container-right">
         <div className="zone-container">
           <Game />
@@ -34,8 +33,9 @@ export default function Play() {
             <input type="text"></input>
           </form>
           </div>
+          </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }

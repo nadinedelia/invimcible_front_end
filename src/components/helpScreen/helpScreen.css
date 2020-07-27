@@ -1,6 +1,8 @@
 .helpScreen {
   border-radius: 25px;
   background: #73AD21;
+  position: absolute;
+  text-align: center;
   padding: 20px;
   width: 640px;
   height: 320px;

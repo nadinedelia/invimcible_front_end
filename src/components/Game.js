@@ -28,6 +28,7 @@ class Game extends React.Component {
       error: null,
       isLoaded: false,
       tiles: [],
+      showHelp: false
     };
     // placeholder for API response
     // this.state.isLoaded = true;
@@ -35,6 +36,12 @@ class Game extends React.Component {
     //   ["string1", "string2"],
     //   ["string3", "string4"],
     // ];
+  }
+
+  togglePopup() {
+    this.setState({
+      showHelp: !this.state.showHelp
+    });
   }
 
   componentDidMount() {
