@@ -1,7 +1,7 @@
 import React from "react";
 import Player from "../player";
 import Game from "../Game.js";
-import API from "../API.js"
+import API from "../API/API.js"
 
 var api = new API()
 api.makeRequest()
