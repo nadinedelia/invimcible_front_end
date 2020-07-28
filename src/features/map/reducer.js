@@ -9,6 +9,10 @@ const mapReducer = (state=initialState, action) => {
       return {
         ...action.payload
       }
+      case "ADD_VIM":
+        return {
+        ...action.payload
+        }
     default:
       return state
   }

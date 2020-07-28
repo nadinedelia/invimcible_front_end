@@ -2,15 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import walkSprite from "./player_walk.png";
 import handleMovement from "./movement";
+import store from "../../config/store";
+
+console.log(store.getState().map)
 
 function Player(props) {
+
   return (
     <div
       ClassName="Player"
       style={{
         position: "absolute",
-        top: props.position[1],
-        left: props.position[0],
+        top: 0,
+        left: 0,
         backgroundImage: `url('${walkSprite}')`,
         backgroundPosition: props.spriteLocation,
         width: "32px",

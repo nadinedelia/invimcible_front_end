@@ -2,6 +2,7 @@ import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
 import React, { Component, useState } from "react";
 
+
 export default function handleMovement(player) {
   let canMove = true;
 
@@ -52,11 +53,14 @@ export default function handleMovement(player) {
 
   function observeImpassable(oldPos, newPos) {
     const tiles = store.getState().map.tiles;
+    
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
     const nextTile = tiles[y][x];
     return nextTile.blocked === false;
   }
+
+
 
   function dispatchMove(direction, newPos, moveAbilty) {
     const walkIndex = getWalkIndex();
@@ -83,6 +87,7 @@ export default function handleMovement(player) {
 
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
+    console.log(store.getState())
     const newPos = getNewPosition(oldPos, direction);
     if (
       observeBoundaries(oldPos, newPos) &&
