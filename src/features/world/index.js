@@ -3,8 +3,6 @@ import Map from "../map";
 import Player from "../player";
 import "./world.css";
 import API from "../../components/API"
-
-// import { tiles } from "../../maps/Level_1";
 import store from "../../config/store";
 
 var api = new API
