@@ -78,6 +78,7 @@ export default function handleMovement(player) {
  function VimMoves() {
   canMove = true
 }
+
   // toggle movement changes true/false
 
   function attemptMove(direction) {
