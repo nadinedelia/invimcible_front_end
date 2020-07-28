@@ -31,14 +31,6 @@
   margin-top: 20px;
 }
 
-/* CONTAINER RIGHT CONTAINING GAME MAP AND SPEECH BOX */
-.speech-container {
-  border: 3px solid white;
-  height: 100px;
-  width: 736px;
-  text-align: center;
-}
-
 /* CONTAINER LEFT SIDE WITH CLUES ON HOW TO NAVIGATE */
 .support-container {
   height: 300px;

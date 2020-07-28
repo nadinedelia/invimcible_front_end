@@ -49,15 +49,16 @@ function WorldRoot() {
       <center>
         <a href="/">
           <img src={"images/logo.png"} className="logo2" />
-        </a>
+        </a>{" "}
+        <br></br>
+        {displayVimCommand ? <VimCommand /> : null}
         <div className="game-container">
           <div className="support-container">
             {displayHelp ? <Help /> : null}{" "}
-            {displayVimCommand ? <VimCommand /> : null}
-            {quit ? <Redirect to="/" /> : null}
           </div>
           <div className="container-right">
             <World />
+            {quit ? <Redirect to="/" /> : null}
           </div>
         </div>
       </center>
