@@ -1,27 +1,34 @@
-import React from "react"
+import React, { Component, PropTypes, useImperativeHandle } from 'react';
 import { render } from "@testing-library/react"
 import "./vimCommands.css"
+import { connect } from 'react-redux';
+import store from '../../config/store';
+
 export default class VimCommand extends React.Component {
   constructor () {
     super();
     this.state = {
-        prefix: ':'
+        prefix: ':',
+        value: null
     }
   }
+
+  getVimCommand() {
+    return this.state.value
+  }
+
   handleChange(e) {
-    console.log(e.target.value)
-    // on hold until redux is up and running
-    // if (e.target.value === ':h'){
-    //   toggleShowHelp()
-    // } 
+    const inputs = { type: "ADD_LETTER", letters: e.target.value }
+    return store.dispatch(inputs);
     };
+
     render () {
       return <div className= "vimBox">
           <input
             type="text"
             defaultValue={this.state.prefix}
-            value = {this.state.value}
-            onChange = {this.handleChange}
+            value={this.state.password}
+            onChange = {this.handleChange.bind(this)}
          />
       </div>
   }

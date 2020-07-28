@@ -4,46 +4,47 @@ import World from "./features/world";
 import VimCommand from "./components/vimCommands"
 import Help from './components/helpScreen/help'
 import store from "./config/store";
-
-var vimMovement = {canMove: true}
+import  { Redirect } from 'react-router-dom'
 
 function WorldRoot() {
 
-  const [showHelp, setShowHelp] = useState(false);
+  const [quit, setQuit] = useState(false);
+  const [displayHelp, setShowHelp] = useState(false);
   const [displayVimCommand, setShowVimCommand] = useState(false);
 
-  function toggleShowHelp() {
-    setShowHelp(!showHelp)
-   }
    function toggleShowVimCommand() {
     setShowVimCommand(true)
    }
 
    function handleKeyDown(e) {
-     if(e.key === ':') {
-       showVimCommand()
-     } else if (e.key === 'Escape') {
-       removeVimCommand()
-     }
-   }
-   function removeVimCommand() {
-      noVimMovement("canMove")
-      setShowVimCommand(false)
+     switch (e.key) {
+      case ":":
+        return toggleShowVimCommand()
+      case "Backspace": 
+      console.log(store.getState().vimCommand)
+        if(store.getState().vimCommand === ":") {
+          setShowHelp(false)
+          return setShowVimCommand(false)
+        }
+      case "Enter":
+        if (displayVimCommand) {
+          if (store.getState().vimCommand === ":h") {
+            return setShowHelp(true)
+          } else if (store.getState().vimCommand === ":q") {
+              changeQuit()
+          }
+        }
+      }
+    }
 
+  function changeQuit() {
+    setQuit(true)
   }
+
   window.addEventListener("keydown", (e) => {
     handleKeyDown(e);
-    console.log(e.key)
   });
 
-function showVimCommand() {
-    noVimMovement("canMove")
-    toggleShowVimCommand()
-}
-
-function noVimMovement(canMove) {
-  vimMovement[canMove] = !vimMovement[canMove]
-}
   return (
     <div className="super-container">
       <center>
@@ -57,8 +58,14 @@ function noVimMovement(canMove) {
 
           <div className="container-right">
             <div className="zone-container">
-            { showHelp ? <Help /> : null }
+              { displayHelp ? <Help /> : null}
               <World />
+
+              { displayVimCommand ? <VimCommand /> : null }
+              { quit ? <Redirect to='/' /> : null }
+              <div className="speech-container">
+                <p> PLEASE PRINT SMTH </p>
+              </div>
             </div>
           </div>
         </div>
