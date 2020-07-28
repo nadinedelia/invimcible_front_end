@@ -1,28 +1,18 @@
-import React from "react";
-import Game from "./Game.js";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
-
-let container;
-
-beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
+// import React from "react";
+import API from "./API.js";
+import store from "../config/store";
 
 describe("Level 1 connection", () => {
-  test("can connect to JSON", async () => {
+  test("can connect to JSON and add to state", async () => {
     const fakeResponse = {
-      level1: [
-        ["string1", "string2"],
-        ["string3", "string4"],
+      mapArray: [
+        ["B", "B"],
+        ["B", "B"],
       ],
+      startPoint: {
+        x: 1,
+        y: 1,
+      }
     };
 
     jest.spyOn(window, "fetch").mockImplementation(() => {
@@ -32,12 +22,14 @@ describe("Level 1 connection", () => {
       return Promise.resolve(fetchResponse);
     });
 
-    await act(async () => {
-      render(<Game />, container);
-    });
+    var api = new API
+    api.makeRequest()
 
-    expect(container.textContent).toBe("    ");
+    setTimeout(function (){
 
-    window.fetch.mockRestore();
+      expect(store.getState().map).toBe(fakeResponse);
+        // Something you want delayed.
+      
+      }, 100)
   });
 });
