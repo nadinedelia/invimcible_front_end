@@ -11,6 +11,7 @@ class API extends React.Component {
       .then((res) => res.json())
       .then(
         (result) => {
+          console.log(result.level1Data)
           store.dispatch({
             type: "ADD_TILES",
             payload: {

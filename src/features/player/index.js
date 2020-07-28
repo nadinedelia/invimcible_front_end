@@ -5,7 +5,7 @@ import handleMovement from "./movement";
 
 function Player(props) {
   return (
-    <div
+    <div ClassName="Player"
       style={{
         position: "absolute",
         top: props.position[1],
