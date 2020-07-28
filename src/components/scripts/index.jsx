@@ -12,12 +12,12 @@ export default class Scripts extends React.Component {
   }
 
   getScripts() {
-      return store.getState().player.script
+      return store.getState().scripts.scripts
   }
 
     render () {
       return <div className= "script">
-          WORK!!!!!!
+          {this.getScripts()}
       </div>
   }
 }
