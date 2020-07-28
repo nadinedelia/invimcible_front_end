@@ -81,7 +81,6 @@ export default function handleMovement(player) {
   // toggle movement changes true/false
 
   function attemptMove(direction) {
-    console.log(canMove)
     
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);

@@ -31,7 +31,6 @@ function WorldRoot() {
 
   window.addEventListener("keydown", (e) => {
     handleKeyDown(e);
-    console.log(e.key)
   });
 
   return (
