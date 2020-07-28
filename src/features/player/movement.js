@@ -1,5 +1,5 @@
 import store from "../../config/store";
-import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
+import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import React, { Component, useState } from "react";
 
 export default function handleMovement(player) {
@@ -56,10 +56,10 @@ export default function handleMovement(player) {
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
     const nextTile = tiles[y][x];
-    return nextTile != 'B';
+    return nextTile.blocked === false;
   }
 
-  function dispatchMove(direction, newPos, moveAbilty) {
+  function dispatchMove(direction, newPos) {
     const walkIndex = getWalkIndex();
     store.dispatch({
       type: "MOVE_PLAYER",
@@ -80,12 +80,33 @@ export default function handleMovement(player) {
   canMove = true
 }
 
-  // toggle movement changes true/false
+  function checkInteraction(oldPos, newPos, direction) {
+    const tiles = store.getState().map.tiles;
+    const y = newPos[1] / SPRITE_SIZE;
+    const x = newPos[0] / SPRITE_SIZE;
+    const nextTile = tiles[y][x];
+    switch(nextTile.value) {
+      case 'P1':
+        const walkIndex = getWalkIndex();
+        store.dispatch({
+          type: "MOVE_PLAYER",
+          payload: {
+            position: oldPos,
+            direction: direction,
+            walkIndex: walkIndex,
+            spriteLocation: getSpriteLocation(direction, walkIndex),
+            script: "Test",
+          }
+        })
+    }
+  }
 
   function attemptMove(direction) {
     
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
+
+    checkInteraction(oldPos, newPos, direction)
 
     if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos) && canMove){
       dispatchMove(direction, newPos);

@@ -52,7 +52,7 @@ function WorldRoot() {
         </a>
         <div className="game-container">
           <div className="support-container">
-            <h3> PLEASE PRINT SMTH </h3>
+            <h3> { store.getState().player.script } </h3>
           </div>
 
           <div className="container-right">

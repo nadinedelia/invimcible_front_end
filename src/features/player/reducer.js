@@ -1,10 +1,11 @@
 
 const initialState = {
   canMove: true,
-  position: [0, 0],
+  position: [32, 32],
   spriteLocation: '0px 0px',
   direction: 'east',
   walkIndex: 0,
+  script: ''
 }
 
 const playerReducer = (state=initialState, action) => {
@@ -17,6 +18,11 @@ const playerReducer = (state=initialState, action) => {
       return {
         ...action.payload
       }
+    case 'ADD_SCRIPT':
+      return {
+        ...action.payload
+      }
+      // [...state.script, action.newScript].join("\n")
     default:
       return state
   }
