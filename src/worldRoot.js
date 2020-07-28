@@ -5,6 +5,7 @@ import VimCommand from "./components/vimCommands";
 import Help from "./components/helpScreen/help";
 import store from "./config/store";
 import { Redirect } from "react-router-dom";
+import { Provider } from 'react-redux';
 
 function WorldRoot() {
   const [quit, setQuit] = useState(false);
@@ -45,6 +46,7 @@ function WorldRoot() {
   });
 
   return (
+    <Provider store={store}>
     <div className="super-container">
       <center>
         <a href="/">
@@ -67,6 +69,7 @@ function WorldRoot() {
         </div>
       </center>
     </div>
+    </Provider>
   );
 }
 

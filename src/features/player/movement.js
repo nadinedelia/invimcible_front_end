@@ -1,7 +1,7 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import React, { Component, useState } from "react";
-import Scripts from '../scripts'
+import Script from '../../components/scripts'
 
 export default function handleMovement(player) {
 
@@ -87,17 +87,7 @@ export default function handleMovement(player) {
     const nextTile = tiles[y][x];
     switch(nextTile.value) {
       case 'P1':
-        const walkIndex = getWalkIndex();
-        store.dispatch({
-          type: "MOVE_PLAYER",
-          payload: {
-            position: oldPos,
-            direction: direction,
-            walkIndex: walkIndex,
-            spriteLocation: getSpriteLocation(direction, walkIndex),
-            script: "Test",
-          }
-        })
+        return store.dispatch({ type: "ADD_SCRIPT", payload: "\nMore Text. Please Work"})
     }
   }
 
@@ -110,7 +100,6 @@ export default function handleMovement(player) {
 
     if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos) && canMove){
       dispatchMove(direction, newPos);
-      console.log(Scripts.getScript)
     }
   }
 

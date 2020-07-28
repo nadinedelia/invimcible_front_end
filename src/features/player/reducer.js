@@ -18,10 +18,6 @@ const playerReducer = (state=initialState, action) => {
       return {
         ...action.payload
       }
-    case 'ADD_SCRIPT':
-      return {
-        ...action.payload
-      }
       // [...state.script, action.newScript].join("\n")
     default:
       return state

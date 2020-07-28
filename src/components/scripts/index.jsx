@@ -1,23 +1,25 @@
-import React, { Component, PropTypes, useImperativeHandle } from 'react';
-import { render } from "@testing-library/react"
-import store from '../../config/store';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-export default class Scripts extends React.Component {
-  constructor () {
-    super();
-    this.state = {
-        prefix: ':',
-        value: null
+export class Script extends React.Component {
+    constructor(props, context) {
+        super(props, context);
     }
-  }
 
-  getScripts() {
-      return store.getState().scripts.scripts
-  }
-
-    render () {
-      return <div className= "script">
-          {this.getScripts()}
-      </div>
-  }
+    render() {
+        console.log(this.props)
+        return (
+            <div>
+            {this.props.script}
+            </div>
+        );
+    }
 }
+
+function mapStateToProps(state, ownProps) {
+    return {
+        script: state.scripts.scripts
+    };
+}
+
+export default connect(mapStateToProps)(Script);
