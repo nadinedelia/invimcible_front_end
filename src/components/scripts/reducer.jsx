@@ -4,7 +4,7 @@ const initialState = {
   
   const scriptReducer = (state=initialState, action) => {
     if (action.type === "ADD_SCRIPT") {
-        return { ...state, scripts: action.payload }
+        return { ...state, scripts: state.scripts + action.payload }
     } else {
         return state
     }
