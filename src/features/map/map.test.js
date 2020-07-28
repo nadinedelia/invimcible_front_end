@@ -7,17 +7,20 @@ import { Provider } from "react-redux";
 import store from "../../config/store";
 import renderer from 'react-test-renderer';
 
+let component
 
-
-var wrapper = null 
-
-// beforeEach(() => {
-//   wrapper = mount(<Provider store={store}>
+beforeEach(() => {
+  component = renderer.create(
+    <Provider store={store}>
+      <Map />
+    </Provider>
+  );
+//   let wrapper = mount(<Provider store={store}>
 //     <div>
 //       <Map />
 //     </div>
 //   </Provider>)
-// })
+})
 
 describe("Map", () => {
   it("renders without crashing", () => {
@@ -34,15 +37,8 @@ describe("Map", () => {
     shallow( < MapTile />);
   });
 
-  it('renders correctly', () => {
-  });
-
+ 
   it("renders map information", () => {
-    let component = renderer.create(
-      <Provider store={store}>
-        <Map />
-      </Provider>
-    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
