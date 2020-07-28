@@ -87,7 +87,11 @@ export default function handleMovement(player) {
     const nextTile = tiles[y][x];
     switch(nextTile.value) {
       case 'P1':
-        return store.dispatch({ type: "ADD_SCRIPT", payload: "\nMore Text. Please Work"})
+        return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P1})
+      case 'P2':
+        return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P2})
+      case 'P2':
+        return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P3})
     }
   }
 

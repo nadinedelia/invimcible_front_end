@@ -9,7 +9,7 @@ export class Script extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <div>
+            <div className="Script">
             {this.props.script}
             </div>
         );
