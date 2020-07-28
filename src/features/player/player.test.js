@@ -6,10 +6,11 @@ import Player from "./index.js";
 
 describe("Player", () => {
 
-  xit("can move west", () => {
+  it("can move west", () => {
     const oldPos = [32, 0]
     const direction = "WEST"
-    expect(getNewPosition(oldPos, direction)).toEqual([32,0])
+    console.log(handleMovement.getNewPosition)
+    expect(getNewPosition(oldPos, direction)).toEqual(oldPos)
   });
 
   xit("returns a sprite location", () => {
