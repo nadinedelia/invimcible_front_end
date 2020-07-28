@@ -21,7 +21,7 @@ function WorldRoot() {
         return toggleShowVimCommand();
       case "Backspace":
         console.log(store.getState().vimCommand);
-        if (store.getState().vimCommand === "" || store.getState().vimCommand.input === "") {
+        if (store.getState().vimCommand === ":" || store.getState().vimCommand.input === "") {
           setShowHelp(false);
           return setShowVimCommand(false);
         }
