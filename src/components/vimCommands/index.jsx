@@ -13,6 +13,10 @@ export default class VimCommand extends React.Component {
     }
   }
 
+  getVimCommand() {
+    return this.state.value
+  }
+
   handleChange(e) {
     const inputs = { type: "ADD_LETTER", letters: e.target.value }
     return store.dispatch(inputs);
