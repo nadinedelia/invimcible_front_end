@@ -1,13 +1,13 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import React, { Component, useState } from "react";
+import Scripts from '../scripts'
 
 export default function handleMovement(player) {
 
   let canMove = true
 
   function getNewPosition(oldPos, direction) {
-    console.log(SPRITE_SIZE)
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
@@ -110,6 +110,7 @@ export default function handleMovement(player) {
 
     if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos) && canMove){
       dispatchMove(direction, newPos);
+      console.log(Scripts.getScript)
     }
   }
 

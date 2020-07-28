@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import World from "./features/world";
-
+import GetScripts from "./features/scripts/index.js"
 import VimCommand from "./components/vimCommands";
 import Help from "./components/helpScreen/help";
 import store from "./config/store";
@@ -52,7 +52,7 @@ function WorldRoot() {
         </a>
         <div className="game-container">
           <div className="support-container">
-            <h3> { store.getState().player.script } </h3>
+            {/* <GetScripts /> */}
           </div>
 
           <div className="container-right">
