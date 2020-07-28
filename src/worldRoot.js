@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import World from "./features/world";
-import GetScripts from "./features/scripts/index.js"
+import Scripts from "./components/scripts/index"
 import VimCommand from "./components/vimCommands";
 import Help from "./components/helpScreen/help";
 import store from "./config/store";
@@ -21,7 +21,7 @@ function WorldRoot() {
         return toggleShowVimCommand();
       case "Backspace":
         console.log(store.getState().vimCommand);
-        if (store.getState().vimCommand === ":") {
+        if (store.getState().vimCommand === "" || store.getState().vimCommand.input === "") {
           setShowHelp(false);
           return setShowVimCommand(false);
         }
@@ -52,7 +52,7 @@ function WorldRoot() {
         </a>
         <div className="game-container">
           <div className="support-container">
-            {/* <GetScripts /> */}
+            <Scripts/>
           </div>
 
           <div className="container-right">

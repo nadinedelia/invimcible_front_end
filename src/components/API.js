@@ -6,7 +6,7 @@ class API extends React.Component {
   makeRequest() {
     // API connection code
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
+      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/1"
     )
       .then((res) => res.json())
       .then(
@@ -16,8 +16,8 @@ class API extends React.Component {
             type: "ADD_TILES",
             payload: {
               loaded: true,
-              tiles: [...result.level1Data.mapArray],
-              startingPoint: result.level1Data.startingPoint
+              tiles: [...result.mapArray],
+              startingPoint: result.startingPoint
             },
           })
         }
