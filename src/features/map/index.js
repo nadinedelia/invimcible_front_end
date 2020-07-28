@@ -1,33 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
-
 import "./styles.css";
 
-function getTileSprite(type) {
-  switch (type) {
-    case "F1":
-      return "grass";
-    // case 'Something':
-    //   return "walkable-tree";
-    // case 'Something':
-    //   return "chest";
-    case "B":
-      return "rock";
-    // case 'Something':
-    //   return "tree";
-    default:
-      console.log("No tiles");
-  }
-}
-
-function MapTile(props) {
+function GetTileSprite(props) {
+  console.log(props)
   return (
-    <div
-      className={`tile ${getTileSprite(props.tile)}`}
+    <div className={`tile ${props.tile.value}`}
       style={{
         height: SPRITE_SIZE,
         width: SPRITE_SIZE,
+        backgroundImage: `url("images/Viccy_park_tiles.png")`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: `-${props.tile.x}px -${props.tile.y}px`,
       }}
     />
   );
@@ -37,13 +22,17 @@ function MapRow(props) {
   return (
     <div className="row">
       {props.tiles.map((tile) => (
-        <MapTile tile={tile} />
+        <GetTileSprite tile={tile} />
       ))}
     </div>
   );
 }
 
 function Map(props) {
+  if (props.loaded === false) {
+    return "Waiting..."
+  }
+  console.log(props, "Hello!")
   return (
     <div
       style={{
