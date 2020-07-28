@@ -8,4 +8,8 @@ describe('About', () => {
     shallow(<World />);
   });
 
+  it("renders without crashing", () => {
+    shallow(<World />);
+  });
+
 })

@@ -9,7 +9,6 @@ describe("Player", () => {
   it("can move west", () => {
     const oldPos = [32, 0]
     const direction = "WEST"
-    console.log(handleMovement.getNewPosition)
     expect(getNewPosition(oldPos, direction)).toEqual(oldPos)
   });
 
