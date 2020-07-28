@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
-
 import "./styles.css";
 
 function GetTileSprite(props) {

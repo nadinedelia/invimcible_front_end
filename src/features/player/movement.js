@@ -3,6 +3,7 @@ import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
 
 export default function handleMovement(player) {
   function getNewPosition(oldPos, direction) {
+    console.log(SPRITE_SIZE)
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];

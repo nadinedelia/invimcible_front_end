@@ -1,14 +1,19 @@
 import React from "react";
+
+import World from "../features/world";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+
 import API from "./API.js";
 import store from "../config/store";
 import {shallow} from 'enzyme';
-import World from '../features/world'
 
 // const supertest = require('supertest');
 // const http = require('http')
 
 
 describe("Level 1 connection", () => {
+
   test("can connect to JSON and add to state", async () => {
     const fakeResponse = {
       mapArray: [

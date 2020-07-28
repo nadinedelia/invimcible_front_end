@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map renders map information 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#42b842",
+      "border": "4px solid white",
+      "height": 384,
+      "left": "-32px",
+      "position": "relative",
+      "top": "0px",
+      "width": 736,
+    }
+  }
+/>
+`;

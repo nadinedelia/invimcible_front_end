@@ -59,10 +59,6 @@ function noVimMovement(canMove) {
             <div className="zone-container">
             { showHelp ? <Help /> : null }
               <World />
-              { displayVimCommand ? <VimCommand /> : null }
-              <div className="speech-container">
-                <p> PLEASE PRINT SMTH </p>
-              </div>
             </div>
           </div>
         </div>
