@@ -16,9 +16,6 @@ function WorldRoot() {
           <div className="container-right">
             <div className="zone-container">
               <World />
-              <div className="speech-container">
-                <p> PLEASE PRINT SMTH </p>
-              </div>
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import React from "react";
-import Map from "./index.js";
+import WorldRoot from "./worldRoot.js";
 // import { connect } from "react-redux";
 import { shallow, mount } from "enzyme";
 import { Provider } from "react-redux";
 // import { createStore, combineReducers } from "redux";
-import store from "../../config/store";
+import store from "./config/store";
 import renderer from "react-test-renderer";
 
 let component;
@@ -12,7 +12,7 @@ let component;
 beforeEach(() => {
   component = renderer.create(
     <Provider store={store}>
-      <Map />
+      <WorldRoot />
     </Provider>
   );
   //   let wrapper = mount(<Provider store={store}>
@@ -22,19 +22,19 @@ beforeEach(() => {
   //   </Provider>)
 });
 
-describe("Map", () => {
+describe("WorldRoot", () => {
   it("renders without crashing", () => {
     shallow(
       <Provider store={store}>
         <div>
-          <Map />
+          <WorldRoot />
         </div>
       </Provider>
     );
   });
 
-  xit("renders MapTile", () => {
-    shallow(<MapTile />);
+  xit("renders WorldRoot", () => {
+    shallow(<WorldRoot />);
   });
 
   it("renders map information", () => {
