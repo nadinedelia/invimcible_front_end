@@ -1,14 +1,7 @@
 import React, { Component } from "react";
+import store from "../config/store";
 
 class API extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      error: null,
-      isLoaded: false,
-      tiles: [],
-    };
-  };
 
   makeRequest() {
     // API connection code
@@ -18,25 +11,17 @@ class API extends React.Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result, "hi")
-          this.state = {
-            isLoaded: true,
-            tiles: [...result.level1],
-          };
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
+          console.log(result.level1Data)
+          store.dispatch({
+            type: "ADD_TILES",
+            payload: {
+              loaded: true,
+              tiles: [...result.level1Data.mapArray],
+              startingPoint: result.level1Data.startingPoint
+            },
+          })
         }
       );
-  }
-
-  TileMatrix() {
-    if (this.state.isLoaded === true) {
-      return this.state.tiles
-    } else { return "not yet"}
   }
 }
 

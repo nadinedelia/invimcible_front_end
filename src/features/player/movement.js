@@ -82,11 +82,11 @@ export default function handleMovement(player) {
     switch (e.key) {
       case 'h':
         return attemptMove("WEST");
-      case 'j':
+      case 'k':
         return attemptMove("NORTH");
       case 'l':
         return attemptMove("EAST");
-      case 'k':
+      case 'j':
         return attemptMove("SOUTH");
       default:
         console.log(e.keyCode);
