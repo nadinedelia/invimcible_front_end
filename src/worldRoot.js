@@ -30,7 +30,7 @@ function WorldRoot() {
           if (store.getState().vimCommand === ":h") {
             return setShowHelp(true);
           } else if (store.getState().vimCommand === ":q") {
-            changeQuit();
+            return changeQuit();
           }
         }
     }
