@@ -1,5 +1,5 @@
 import React from "react";
-import WorldRoot from "./worldRoot.js";
+import App from "./App.js";
 // import { connect } from "react-redux";
 import { shallow, mount } from "enzyme";
 import { Provider } from "react-redux";
@@ -12,7 +12,7 @@ let component;
 beforeEach(() => {
   component = renderer.create(
     <Provider store={store}>
-      <WorldRoot />
+      <App />
     </Provider>
   );
   //   let wrapper = mount(<Provider store={store}>
@@ -22,22 +22,22 @@ beforeEach(() => {
   //   </Provider>)
 });
 
-describe("WorldRoot", () => {
+describe("App", () => {
   it("renders without crashing", () => {
     shallow(
       <Provider store={store}>
         <div>
-          <WorldRoot />
+          <App />
         </div>
       </Provider>
     );
   });
 
-  it("renders WorldRoot", () => {
-    shallow(<WorldRoot />);
+  it("renders the App", () => {
+    shallow(<App />);
   });
 
-  it("renders map information", () => {
+  it("renders app information", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
