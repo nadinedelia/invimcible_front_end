@@ -3,11 +3,10 @@ import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
 import React, { Component, useState } from "react";
 
 export default function handleMovement(player) {
-
-  let canMove = true
+  let canMove = true;
 
   function getNewPosition(oldPos, direction) {
-    console.log(SPRITE_SIZE)
+    console.log(SPRITE_SIZE);
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
@@ -36,7 +35,7 @@ export default function handleMovement(player) {
         console.log(direction);
     }
   }
-  
+
   function getWalkIndex() {
     const walkIndex = store.getState().player.walkIndex;
     return walkIndex >= 2 ? 0 : walkIndex + 1;
@@ -56,7 +55,7 @@ export default function handleMovement(player) {
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
     const nextTile = tiles[y][x];
-    return nextTile != 'B';
+    return nextTile.blocked === false;
   }
 
   function dispatchMove(direction, newPos, moveAbilty) {
@@ -72,44 +71,48 @@ export default function handleMovement(player) {
     });
   }
 
- function VimCantMove() {
-   canMove = false
- }
+  function VimCantMove() {
+    canMove = false;
+  }
 
- function VimMoves() {
-  canMove = true
-}
+  function VimMoves() {
+    canMove = true;
+  }
 
   // toggle movement changes true/false
 
   function attemptMove(direction) {
-    
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
-
-    if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos) && canMove){
+    if (
+      observeBoundaries(oldPos, newPos) &&
+      observeImpassable(oldPos, newPos) &&
+      canMove
+    ) {
       dispatchMove(direction, newPos);
+    } else {
+      dispatchMove(direction, oldPos);
     }
   }
 
   function handleKeyDown(e) {
-    if(canMove == true) e.preventDefault();
+    if (canMove == true) e.preventDefault();
 
     switch (e.key) {
-      case 'h':
+      case "h":
         return attemptMove("WEST");
-      case 'k':
+      case "k":
         return attemptMove("NORTH");
-      case 'l':
+      case "l":
         return attemptMove("EAST");
-      case 'j':
+      case "j":
         return attemptMove("SOUTH");
-      case 'Escape':
-        return VimMoves()
-      case ':':
-        return VimCantMove()
+      case "Escape":
+        return VimMoves();
+      case ":":
+        return VimCantMove();
       default:
-        return
+        return;
     }
   }
 
