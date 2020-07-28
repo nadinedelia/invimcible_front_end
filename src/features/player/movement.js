@@ -7,7 +7,6 @@ export default function handleMovement(player) {
   let canMove = true;
 
   function getNewPosition(oldPos, direction) {
-    console.log(SPRITE_SIZE);
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];

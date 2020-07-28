@@ -52,17 +52,15 @@ function WorldRoot() {
         </a>
         <div className="game-container">
           <div className="support-container">
-            <h3> PLEASE PRINT SMTH </h3>
+            {displayHelp ? <Help /> : null}
+
+            <br></br>
+
+            {displayVimCommand ? <VimCommand /> : null}
+            {quit ? <Redirect to="/" /> : null}
           </div>
-
           <div className="container-right">
-            <div className="zone-container">
-              {displayHelp ? <Help /> : null}
-              <World />
-
-              {displayVimCommand ? <VimCommand /> : null}
-              {quit ? <Redirect to="/" /> : null}
-            </div>
+            <World />
           </div>
         </div>
       </center>
