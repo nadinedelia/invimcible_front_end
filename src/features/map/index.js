@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
+import store from "../../config/store";
 import "./styles.css";
+
+let vimStartingPos = store.getState().player.position
 
 function GetTileSprite(props) {
   return (
@@ -27,11 +30,25 @@ function MapRow(props) {
   );
 }
 
+function getVimStartPosition() {
+    store.dispatch({
+    type: "MOVE_PLAYER",
+    payload: {
+      position: [0,0],
+      direction: 'east',
+      walkIndex: 0,
+      spriteLocation: '0px 0px',
+    }
+  })
+  return store.getState().player.position
+}
+
 function Map(props) {
   if (props.loaded === false) {
     return "Waiting..."
   }
-  console.log(props, "Hello!")
+  console.log(store.getState().player.position, "I'm here!!!")
+  getVimStartPosition()
   return (
     <div
       style={{

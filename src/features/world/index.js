@@ -20,8 +20,8 @@ function World(props) {
         margin: "20px",
       }}
     >
-      <Map />
       <Player />
+      <Map />
     </div>
   );
 }
