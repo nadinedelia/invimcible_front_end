@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
+import store from "../../config/store";
 import "./styles.css";
 
 function GetTileSprite(props) {
-  console.log(props)
   return (
     <div className={`tile ${props.tile.value}`}
       style={{
@@ -32,7 +32,7 @@ function Map(props) {
   if (props.loaded === false) {
     return "Waiting..."
   }
-  console.log(props, "Hello!")
+  
   return (
     <div
       style={{
