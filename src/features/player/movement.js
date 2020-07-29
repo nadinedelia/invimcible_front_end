@@ -83,7 +83,7 @@ export default function handleMovement(player) {
     if (tiles[y][x].value === "E") {
       console.log("end tile")
       removeTileData()
-      loadLevel(2)
+      loadLevel()
     }
   }
 
@@ -93,14 +93,14 @@ export default function handleMovement(player) {
       payload: {
         loaded: false,
         tiles: [],
-        startingPoint: null
+        level: 2,
       },
     })
   }
 
   function loadLevel(number) {
     var api = new API
-    api.makeRequest(number)
+    api.makeRequest(store.getState().map.level)
   }
 
  function VimCantMove() {

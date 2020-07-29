@@ -23,6 +23,22 @@ class API extends React.Component {
         }
       );
   }
+
+  makePostRequest() {
+
+    const data = { 
+      level: store.getState().map.level,
+      postion: store.getState().player.postion
+      }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data })
+    };
+    fetch(`https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/`, requestOptions)
+          .then(response => response.json())
+  }
 }
 
 export default API;
