@@ -6,7 +6,7 @@ class API extends React.Component {
   makeRequest(number = 1) {
     // API connection code
     fetch(
-      `https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/2`
+      `https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/${number}`
     )
       .then((res) => res.json())
       .then(

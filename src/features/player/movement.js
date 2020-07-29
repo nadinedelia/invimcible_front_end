@@ -69,7 +69,7 @@ export default function handleMovement(player) {
     return nextTile.blocked === false;
   }
 
-  function dispatchMove(direction, newPos, moveAbilty) {
+  function dispatchMove(direction, newPos) {
     const walkIndex = getWalkIndex();
     store.dispatch({
       type: "MOVE_PLAYER",
@@ -102,7 +102,8 @@ export default function handleMovement(player) {
       const y = newPos[1] / SPRITE_SIZE;
       const x = newPos[0] / SPRITE_SIZE;
       const nextTile = tiles[y][x];
-      if (nextTile === "PB") {
+      console.log(nextTile.value, "next tile")
+      if (nextTile.value === "PB") {
         return true
       }
     }
@@ -151,8 +152,12 @@ export default function handleMovement(player) {
   function attemptJump(direction){
     const oldPos = store.getState().player.position;
     const newPos = getNewJumpPosition(oldPos, direction);
+    const potholePos = getNewPosition(oldPos, direction);
+    console.log(oldPos, "I'm oldpos")
+    console.log(newPos, "i'm newpos")
+    console.log(checkPothole(oldPos, newPos))
     if (
-      checkPothole(oldPos, newPos)
+      checkPothole(oldPos, potholePos)
     ) {
       dispatchMove(direction, newPos);
     }
