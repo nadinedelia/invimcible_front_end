@@ -11,20 +11,19 @@ class API extends React.Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          // console.log(result.level1Data)
+          // console.log(result)
           store.dispatch({
             type: "ADD_TILES",
             payload: {
               loaded: true,
               tiles: [...result.level1Data.mapArray],
-              startingPoint: result.level1Data.startingPoint
-            },
+            }
           })
           store.dispatch({
             type: "ADD_VIM",
             payload: {
               position: result.startingPoint
-            },
+            }
         });
         }
       );

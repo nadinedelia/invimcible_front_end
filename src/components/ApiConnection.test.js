@@ -78,7 +78,7 @@ expect(containerStyle).toHaveProperty('opacity', '1');
 //     const elem = container.find(".tile B");
 // expect(getComputedStyle(elem.getDOMNode()).getPropertyValue('opacity')).toBe('0.4');
 
-    console.log(container.find(".tile B"))
+    // console.log(container.find(".tile B"))
 
     //expect(container.find('.tile B').prop('style')).toHaveProperty('', '100%');
 

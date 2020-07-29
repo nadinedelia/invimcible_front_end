@@ -4,7 +4,7 @@ import walkSprite from "./player_walk.png";
 import handleMovement from "./movement";
 import store from "../../config/store";
 
-console.log(store.getState().map)
+// console.log(store.getState().map)
 
 function Player(props) {
 

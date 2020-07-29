@@ -51,6 +51,7 @@ export default function handleMovement(player) {
   }
 
   function observeImpassable(oldPos, newPos) {
+    console.log(store.getState())
     const tiles = store.getState().map.tiles;
     
     const y = newPos[1] / SPRITE_SIZE;
