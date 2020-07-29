@@ -3,21 +3,21 @@ import store from "../config/store";
 
 class API extends React.Component {
 
-  makeRequest() {
+  makeRequest(number = 1) {
     // API connection code
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
+      `https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/${number}`
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result.level1Data)
+          console.log(result)
           store.dispatch({
             type: "ADD_TILES",
             payload: {
               loaded: true,
-              tiles: [...result.level1Data.mapArray],
-              startingPoint: result.level1Data.startingPoint
+              tiles: [...result.mapArray],
+              startingPoint: result.startingPoint
             },
           })
         }

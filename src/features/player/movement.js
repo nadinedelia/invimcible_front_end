@@ -1,5 +1,6 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
+import API from "../../components/API"
 import React, { Component, useState } from "react";
 
 export default function handleMovement(player) {
@@ -70,6 +71,36 @@ export default function handleMovement(player) {
         spriteLocation: getSpriteLocation(direction, walkIndex),
       },
     });
+    checkPositionEnd(newPos)
+  }
+
+  function checkPositionEnd(location) {
+    const tiles = store.getState().map.tiles;
+    const y = location[1] / SPRITE_SIZE;
+    const x = location[0] / SPRITE_SIZE;
+    console.log(x,y)
+    console.log(tiles[y][x])
+    if (tiles[y][x].value === "E") {
+      console.log("end tile")
+      removeTileData()
+      loadLevel(2)
+    }
+  }
+
+  function removeTileData() {
+    store.dispatch({
+      type: "REMOVE_DATA",
+      payload: {
+        loaded: false,
+        tiles: [],
+        startingPoint: null
+      },
+    })
+  }
+
+  function loadLevel(number) {
+    var api = new API
+    api.makeRequest(number)
   }
 
  function VimCantMove() {
