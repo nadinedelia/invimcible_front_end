@@ -6,6 +6,9 @@ import Script from '../../components/scripts'
 export default function handleMovement(player) {
 
   let canMove = true
+  let doneP1 = false
+  let doneP2 = false
+  let doneP3 = false
 
   function getNewPosition(oldPos, direction) {
     switch (direction) {
@@ -87,11 +90,20 @@ export default function handleMovement(player) {
     const nextTile = tiles[y][x];
     switch(nextTile.value) {
       case 'P1':
-        return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P1})
+        if (doneP1 === false) {
+          doneP1 = true
+          return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P1})
+        } else { return }
       case 'P2':
-        return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P2})
-      case 'P2':
-        return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P3})
+        if (doneP2 === false) {
+          doneP2 = true
+          return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P2})
+        } else { return }
+      case 'P3':
+        if (doneP3 === false) {
+          doneP3 = true
+          return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P3})
+        } else { return }
     }
   }
 
