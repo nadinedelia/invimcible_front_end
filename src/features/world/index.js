@@ -20,7 +20,7 @@ function World(props) {
       }}
     >
       <Map />
-      <Player />
+      <Player />    
     </div>
   );
 }
