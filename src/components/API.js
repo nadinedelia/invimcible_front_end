@@ -18,7 +18,6 @@ class API extends React.Component {
             payload: {
               loaded: true,
               tiles: [...result.mapArray],
-              startingPoint: result.startingPoint
             },
           })
           store.dispatch({
@@ -29,7 +28,6 @@ class API extends React.Component {
               walkIndex: 0
             }
           })
-          console.log(store.getState().player.position, "I am position")
         }
       );
   }
