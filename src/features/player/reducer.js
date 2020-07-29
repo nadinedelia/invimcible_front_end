@@ -1,7 +1,7 @@
 
 const initialState = {
-  canMove: true,
-  position: [32, 32],
+  canMove: false,
+  position: [64, 64],
   spriteLocation: '0px 0px',
   direction: 'east',
   walkIndex: 0,
@@ -17,6 +17,10 @@ const playerReducer = (state=initialState, action) => {
       return {
         ...action.payload
       }
+    case 'VIM_START':
+    return {
+      ...action.payload
+    }
     default:
       return state
   }

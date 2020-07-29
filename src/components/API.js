@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import store from "../config/store";
+import { SPRITE_SIZE } from "../config/constants";
 
 class API extends React.Component {
 
@@ -20,6 +21,14 @@ class API extends React.Component {
               startingPoint: result.startingPoint
             },
           })
+          store.dispatch({
+            type: "VIM_START",
+            payload: {
+              canMove: true,
+              position: [result.startingPoint.x * SPRITE_SIZE, result.startingPoint.y * SPRITE_SIZE],
+            }
+          })
+          console.log(store.getState().player.position, "I am position")
         }
       );
   }
