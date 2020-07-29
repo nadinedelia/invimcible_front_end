@@ -137,7 +137,7 @@ export default function handleMovement(player) {
     canMove = true;
   }
 
-  function checkInteraction(oldPos, newPos, direction) {
+  function checkInteraction(newPos) {
     const tiles = store.getState().map.tiles;
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
@@ -164,7 +164,7 @@ export default function handleMovement(player) {
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
-    checkInteraction(oldPos, newPos, direction)
+    checkInteraction(newPos)
     console.log(newPos)
     if (
       observeBoundaries(oldPos, newPos) &&
@@ -173,7 +173,7 @@ export default function handleMovement(player) {
     ) {
       dispatchMove(direction, newPos);
     } else {
-      dispatchMove(direction, oldPos);
+      // dispatchMove(direction, oldPos);
     }
   }
       
