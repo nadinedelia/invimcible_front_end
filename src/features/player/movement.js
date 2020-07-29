@@ -157,7 +157,8 @@ export default function handleMovement(player) {
     console.log(newPos, "i'm newpos")
     console.log(checkPothole(oldPos, newPos))
     if (
-      checkPothole(oldPos, potholePos)
+      checkPothole(oldPos, potholePos) &&
+      canMove
     ) {
       dispatchMove(direction, newPos);
     }
