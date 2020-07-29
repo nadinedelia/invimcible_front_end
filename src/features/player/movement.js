@@ -153,9 +153,7 @@ export default function handleMovement(player) {
     const oldPos = store.getState().player.position;
     const newPos = getNewJumpPosition(oldPos, direction);
     const potholePos = getNewPosition(oldPos, direction);
-    console.log(oldPos, "I'm oldpos")
-    console.log(newPos, "i'm newpos")
-    console.log(checkPothole(oldPos, newPos))
+       
     if (
       checkPothole(oldPos, potholePos) &&
       canMove
