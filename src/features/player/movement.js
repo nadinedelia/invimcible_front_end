@@ -83,6 +83,7 @@ export default function handleMovement(player) {
     checkPositionEnd(newPos)
   }
 
+
   function checkPositionEnd(location) {
     const tiles = store.getState().map.tiles;
     const y = location[1] / SPRITE_SIZE;
@@ -101,7 +102,7 @@ export default function handleMovement(player) {
       const y = newPos[1] / SPRITE_SIZE;
       const x = newPos[0] / SPRITE_SIZE;
       const nextTile = tiles[y][x];
-      if (nextTile === "T") {
+      if (nextTile === "PB") {
         return true
       }
     }
@@ -178,7 +179,7 @@ export default function handleMovement(player) {
       case ":":
         return VimCantMove();
       case "w":
-          return attemptJump("EAST");
+        return attemptJump("EAST");
       default:
         return;
     }
