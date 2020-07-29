@@ -22,6 +22,16 @@ export default function handleMovement(player) {
     }
   }
 
+  function getNewJumpPosition(oldPos, direction) {
+    console.log(SPRITE_SIZE);
+    switch (direction) {
+      case "EAST":
+        return [oldPos[0] + (SPRITE_SIZE * 2), oldPos[1]];
+      default:
+        console.log(direction);
+    }
+  }
+
   function getSpriteLocation(direction, walkIndex) {
     switch (direction) {
       case "SOUTH":
@@ -59,7 +69,7 @@ export default function handleMovement(player) {
     return nextTile.blocked === false;
   }
 
-  function dispatchMove(direction, newPos, moveAbilty) {
+  function dispatchMove(direction, newPos) {
     const walkIndex = getWalkIndex();
     store.dispatch({
       type: "MOVE_PLAYER",
@@ -73,6 +83,7 @@ export default function handleMovement(player) {
     checkPositionEnd(newPos)
   }
 
+
   function checkPositionEnd(location) {
     const tiles = store.getState().map.tiles;
     const y = location[1] / SPRITE_SIZE;
@@ -85,6 +96,17 @@ export default function handleMovement(player) {
       loadLevel(2)
     }
   }
+
+  function checkPothole(oldPos, newPos) {
+      const tiles = store.getState().map.tiles;
+      const y = newPos[1] / SPRITE_SIZE;
+      const x = newPos[0] / SPRITE_SIZE;
+      const nextTile = tiles[y][x];
+      console.log(nextTile.value, "next tile")
+      if (nextTile.value === "PB") {
+        return true
+      }
+    }
 
   function removeTileData() {
     store.dispatch({
@@ -115,6 +137,7 @@ export default function handleMovement(player) {
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
+    console.log(newPos)
     if (
       observeBoundaries(oldPos, newPos) &&
       observeImpassable(oldPos, newPos) &&
@@ -125,6 +148,23 @@ export default function handleMovement(player) {
       dispatchMove(direction, oldPos);
     }
   }
+
+  function attemptJump(direction){
+    const oldPos = store.getState().player.position;
+    const newPos = getNewJumpPosition(oldPos, direction);
+    const potholePos = getNewPosition(oldPos, direction);
+       
+    if (
+      checkPothole(oldPos, potholePos) &&
+      canMove
+    ) {
+      dispatchMove(direction, newPos);
+    }
+    else {
+      dispatchMove(direction, oldPos)
+    }
+  }
+  
 
   function handleKeyDown(e) {
     if (canMove == true) e.preventDefault();
@@ -142,6 +182,8 @@ export default function handleMovement(player) {
         return VimMoves();
       case ":":
         return VimCantMove();
+      case "w":
+        return attemptJump("EAST");
       default:
         return;
     }
