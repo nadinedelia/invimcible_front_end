@@ -3,7 +3,7 @@
 /* A SINGLE TILE ON WHICH VIM MOVES */
 .tile {
   display: inline-flex;
-  background-color: green;
+  background-color: #6b9f3a;
   height: 32px;
   width: 32px;
 }
