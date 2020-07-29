@@ -1,10 +1,11 @@
 import React, { Component, useState } from "react";
 import World from "./features/world";
-
+import Scripts from "./components/scripts/index"
 import VimCommand from "./components/vimCommands";
 import Help from "./components/helpScreen/help";
 import store from "./config/store";
 import { Redirect } from "react-router-dom";
+import { Provider } from 'react-redux';
 
 function WorldRoot() {
   const [quit, setQuit] = useState(false);
@@ -20,17 +21,16 @@ function WorldRoot() {
       case ":":
         return toggleShowVimCommand();
       case "Backspace":
-        console.log(store.getState().vimCommand);
-        if (store.getState().vimCommand === ":") {
+        if (store.getState().vimCommand === ":" || store.getState().vimCommand.input === "") {
           setShowHelp(false);
           return setShowVimCommand(false);
-        }
+        } else { return }
       case "Enter":
         if (displayVimCommand) {
           if (store.getState().vimCommand === ":h") {
             return setShowHelp(true);
           } else if (store.getState().vimCommand === ":q") {
-            changeQuit();
+            return changeQuit();
           }
         }
     }
@@ -45,6 +45,7 @@ function WorldRoot() {
   });
 
   return (
+    <Provider store={store}>
     <div className="super-container">
       <center>
         <a href="/">
@@ -52,7 +53,7 @@ function WorldRoot() {
         </a>
         <div className="game-container">
           <div className="support-container">
-            <h3> PLEASE PRINT SMTH </h3>
+            <Scripts/>
           </div>
 
           <div className="container-right">
@@ -67,6 +68,7 @@ function WorldRoot() {
         </div>
       </center>
     </div>
+    </Provider>
   );
 }
 

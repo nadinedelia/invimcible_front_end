@@ -1,13 +1,17 @@
 import store from "../../config/store";
-import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
+import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import API from "../../components/API"
 import React, { Component, useState } from "react";
+import Script from '../../components/scripts'
 
 export default function handleMovement(player) {
-  let canMove = true;
+
+  let canMove = true
+  let doneP1 = false
+  let doneP2 = false
+  let doneP3 = false
 
   function getNewPosition(oldPos, direction) {
-    console.log(SPRITE_SIZE);
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
@@ -132,7 +136,29 @@ export default function handleMovement(player) {
     canMove = true;
   }
 
-  // toggle movement changes true/false
+  function checkInteraction(oldPos, newPos, direction) {
+    const tiles = store.getState().map.tiles;
+    const y = newPos[1] / SPRITE_SIZE;
+    const x = newPos[0] / SPRITE_SIZE;
+    const nextTile = tiles[y][x];
+    switch(nextTile.value) {
+      case 'P1':
+        if (doneP1 === false) {
+          doneP1 = true
+          return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P1})
+        } else { return }
+      case 'P2':
+        if (doneP2 === false) {
+          doneP2 = true
+          return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P2})
+        } else { return }
+      case 'P3':
+        if (doneP3 === false) {
+          doneP3 = true
+          return store.dispatch({ type: "ADD_SCRIPT", payload: SCRIPT_1.P3})
+        } else { return }
+    }
+  }
 
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
@@ -148,7 +174,7 @@ export default function handleMovement(player) {
       dispatchMove(direction, oldPos);
     }
   }
-
+      
   function attemptJump(direction){
     const oldPos = store.getState().player.position;
     const newPos = getNewJumpPosition(oldPos, direction);

@@ -20,6 +20,7 @@ const playerReducer = (state = initialState, action) => {
       return {
         ...action.payload
       }
+      // [...state.script, action.newScript].join("\n")
     default:
       return state;
   }
