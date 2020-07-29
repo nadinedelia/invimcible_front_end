@@ -21,11 +21,10 @@ function WorldRoot() {
       case ":":
         return toggleShowVimCommand();
       case "Backspace":
-        console.log(store.getState().vimCommand);
         if (store.getState().vimCommand === ":" || store.getState().vimCommand.input === "") {
           setShowHelp(false);
           return setShowVimCommand(false);
-        }
+        } else { return }
       case "Enter":
         if (displayVimCommand) {
           if (store.getState().vimCommand === ":h") {
