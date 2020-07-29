@@ -4,7 +4,6 @@ import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
 import "./styles.css";
 
 function GetTileSprite(props) {
-  console.log(props)
   return (
     <div className={`tile ${props.tile.value}`}
       style={{
