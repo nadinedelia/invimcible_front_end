@@ -2,12 +2,11 @@ import React from "react";
 import Map from "../map";
 import Player from "../player";
 import "./world.css";
-import API from "../../components/API"
+import API from "../../components/API";
 import store from "../../config/store";
 
-var api = new API
-api.makeRequest()
-
+var api = new API();
+api.makeRequest();
 
 function World(props) {
   return (
