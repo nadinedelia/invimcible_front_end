@@ -26,6 +26,7 @@ class API extends React.Component {
             payload: {
               canMove: true,
               position: [result.startingPoint.x * SPRITE_SIZE, result.startingPoint.y * SPRITE_SIZE],
+              walkIndex: 0
             }
           })
           console.log(store.getState().player.position, "I am position")

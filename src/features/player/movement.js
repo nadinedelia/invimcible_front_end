@@ -12,6 +12,7 @@ export default function handleMovement(player) {
   let doneP3 = false
 
   function getNewPosition(oldPos, direction) {
+    console.log(SPRITE_SIZE)
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
@@ -163,6 +164,7 @@ export default function handleMovement(player) {
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
+    checkInteraction(oldPos, newPos, direction)
     console.log(newPos)
     if (
       observeBoundaries(oldPos, newPos) &&
