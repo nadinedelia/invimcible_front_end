@@ -4,7 +4,6 @@ import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from "../../config/constants";
 import "./styles.css";
 
 function GetTileSprite(props) {
-  console.log(props)
   return (
     <div className={`tile ${props.tile.value}`}
       style={{
@@ -19,6 +18,7 @@ function GetTileSprite(props) {
 }
 
 function MapRow(props) {
+  console.log(props, "Here")
   return (
     <div className="row">
       {props.tiles.map((tile) => (
@@ -53,6 +53,9 @@ function Map(props) {
 }
 
 function mapStateToProps(state) {
+  console.log(state, "Here")
+  console.log(state.map.tiles)
+
   return {
     tiles: state.map.tiles,
   };

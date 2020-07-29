@@ -6,25 +6,19 @@ class API extends React.Component {
   makeRequest() {
     // API connection code
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/"
+      "https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/1"
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          // console.log(result)
+          console.log(result.startingPoint)
           store.dispatch({
             type: "ADD_TILES",
             payload: {
               loaded: true,
-              tiles: [...result.level1Data.mapArray],
+              tiles: [...result.mapArray],
             }
           })
-          store.dispatch({
-            type: "ADD_VIM",
-            payload: {
-              position: result.startingPoint
-            }
-        });
         }
       );
   }
