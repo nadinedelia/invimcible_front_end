@@ -5,6 +5,9 @@ import VimCommand from "./components/vimCommands";
 import Help from "./components/helpScreen/help";
 import store from "./config/store";
 import { Redirect } from "react-router-dom";
+import API from "./components/API"
+
+var api = new API
 
 function WorldRoot() {
   const [quit, setQuit] = useState(false);
@@ -30,8 +33,17 @@ function WorldRoot() {
           if (store.getState().vimCommand === ":h") {
             return setShowHelp(true);
           } else if (store.getState().vimCommand === ":q") {
-            changeQuit();
+            return changeQuit();
+          } else if (store.getState().vimCommand === ":save") {
+            console.log("request made")
+            api.makePostRequest("help")
+            return
+          } else if (store.getState().vimCommand === ":load") {
+            console.log("request made")
+            api.makeLoadRequest("help")
+            return
           }
+
         }
     }
   }
