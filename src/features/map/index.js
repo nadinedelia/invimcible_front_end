@@ -6,7 +6,8 @@ import "./styles.css";
 
 function GetTileSprite(props) {
   return (
-    <div className={`tile ${props.tile.value}`}
+    <div
+      className={`tile ${props.tile.value}`}
       style={{
         height: SPRITE_SIZE,
         width: SPRITE_SIZE,
@@ -30,9 +31,9 @@ function MapRow(props) {
 
 function Map(props) {
   if (props.loaded === false) {
-    return "Waiting..."
+    return "Waiting...";
   }
-  
+
   return (
     <div
       style={{
@@ -42,7 +43,7 @@ function Map(props) {
         width: MAP_WIDTH,
         height: MAP_HEIGHT,
         backgroundColor: "#42b842",
-        border: "4px solid white",
+        border: "3px solid white",
       }}
     >
       {props.tiles.map((row) => (
