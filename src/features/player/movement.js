@@ -206,8 +206,11 @@ export default function handleMovement(player) {
         return attemptMove("EAST");
       case "j":
         return attemptMove("SOUTH");
-      case "Escape":
-        return VimMoves();
+      case "Backspace":
+        if (store.getState().vimCommand.length === 1) {
+          console.log("move", store.getState().vimCommand)
+          return VimMoves();
+        } else { return }
       case ":":
         return VimCantMove();
       case "w":
