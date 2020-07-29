@@ -1,8 +1,8 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import API from "../../components/API"
-import React, { Component, useState } from "react";
-import Script from '../../components/scripts'
+// import React, { Component, useState } from "react";
+// import Script from '../../components/scripts'
 
 export default function handleMovement(player) {
 

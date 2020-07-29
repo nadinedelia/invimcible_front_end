@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import store from "../config/store";
 import { SPRITE_SIZE } from "../config/constants";
 

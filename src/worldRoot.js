@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import World from "./features/world";
 import Scripts from "./components/scripts/index"
 import VimCommand from "./components/vimCommands";
