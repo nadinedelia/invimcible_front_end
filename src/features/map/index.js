@@ -21,8 +21,8 @@ function GetTileSprite(props) {
 function MapRow(props) {
   return (
     <div className="row">
-      {props.tiles.map((tile) => (
-        <GetTileSprite tile={tile} />
+      {props.tiles.map((tile, i) => (
+        <GetTileSprite key={i} tile={tile} />
       ))}
     </div>
   );
@@ -45,8 +45,8 @@ function Map(props) {
         border: "4px solid white",
       }}
     >
-      {props.tiles.map((row) => (
-        <MapRow tiles={row} />
+      {props.tiles.map((row, i) => (
+        <MapRow key={i} tiles={row} />
       ))}
     </div>
   );
