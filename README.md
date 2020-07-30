@@ -2,7 +2,7 @@
 
 [Deployed here]()
 
-Welcome to our final team at Makers. At the current stage of development, 8 working days were spent planning, developing, and implementing before a feature freeze, with two further working days to tidying up code. For a detailed account of the agile working environment and the sprints involved in this project, please visit [the team wiki](https://github.com/RaeRachael/invimcible_front_end/wiki), with the additional [back end wiki](https://github.com/tristanlangford/invimcible_back_end/wiki).
+Welcome to our final team at Makers. At the current stage of development, 8 working days were spent planning, developing, and implementing before a feature freeze, with two further working days dedicated to tidying up code. For a detailed account of the agile working environment and the sprints involved in this project, please visit [the team wiki](https://github.com/RaeRachael/invimcible_front_end/wiki), with the additional [back end wiki](https://github.com/tristanlangford/invimcible_back_end/wiki).
 
 ## Team
 * [Tristan](https://github.com/tristanlangford)
