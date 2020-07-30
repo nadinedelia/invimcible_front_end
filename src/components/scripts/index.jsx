@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 export class Script extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
 
     render() {
         return (
