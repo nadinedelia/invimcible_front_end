@@ -1,16 +1,12 @@
 const initialState = {
   tiles: [],
-  loaded: false
+  loaded: false,
+  level: 1
 }
 
 const mapReducer = (state=initialState, action) => {
   switch(action.type) {
-    case 'ADD_TILES':
-      return {
-        ...action.payload
-      }
-
-    case 'REMOVE_DATA':
+    case 'UPDATE_MAP_STORE':
       return {
         ...action.payload
       }

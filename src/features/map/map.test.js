@@ -1,9 +1,7 @@
 import React from "react";
 import Map from "./index.js";
-// import { connect } from "react-redux";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import { Provider } from "react-redux";
-// import { createStore, combineReducers } from "redux";
 import store from "../../config/store";
 import renderer from "react-test-renderer";
 
@@ -15,11 +13,6 @@ beforeEach(() => {
       <Map />
     </Provider>
   );
-  //   let wrapper = mount(<Provider store={store}>
-  //     <div>
-  //       <Map />
-  //     </div>
-  //   </Provider>)
 });
 
 describe("Map", () => {

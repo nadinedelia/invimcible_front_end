@@ -6,8 +6,8 @@ export default function Output(movement) {
     <div className="helpScreen">
       <h2>Movement:</h2>
       <ul>
-        {movement.map((control) => (
-          <div className="controls"> {control}</div>
+        {movement.map((control, i) => (
+          <div className="controls" key={i}> {control}</div>
         ))}
       </ul>
     </div>

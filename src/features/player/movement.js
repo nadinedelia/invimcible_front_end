@@ -1,8 +1,6 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
-import API from "../../components/API"
-// import React, { Component, useState } from "react";
-// import Script from '../../components/scripts'
+import makeRequest from "../../components/API"
 
 export default function handleMovement(player) {
 
@@ -10,6 +8,10 @@ export default function handleMovement(player) {
   let doneP1 = false
   let doneP2 = false
   let doneP3 = false
+
+  function getTiles() {
+    return store.getState().map.tiles
+  }
 
   function getNewPosition(oldPos, direction) {
     switch (direction) {
@@ -52,7 +54,7 @@ export default function handleMovement(player) {
     return walkIndex >= 2 ? 0 : walkIndex + 1;
   }
 
-  function observeBoundaries(oldPos, newPos) {
+  function observeBoundaries(newPos) {
     return (
       newPos[0] >= 0 &&
       newPos[0] <= MAP_WIDTH - SPRITE_SIZE &&
@@ -61,18 +63,17 @@ export default function handleMovement(player) {
     );
   }
 
-  function observeImpassable(oldPos, newPos) {
-    const tiles = store.getState().map.tiles;
+  function observeImpassable(newPos) {
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
-    const nextTile = tiles[y][x];
+    const nextTile = getTiles()[y][x];
     return nextTile.blocked === false;
   }
 
   function dispatchMove(direction, newPos) {
     const walkIndex = getWalkIndex();
     store.dispatch({
-      type: "MOVE_PLAYER",
+      type: "UPDATE_PLAYER_STORE",
       payload: {
         position: newPos,
         direction: direction,
@@ -83,41 +84,26 @@ export default function handleMovement(player) {
     checkPositionEnd(newPos)
   }
 
-
   function checkPositionEnd(location) {
-    const tiles = store.getState().map.tiles;
+    const level = store.getState().map.level
     const y = location[1] / SPRITE_SIZE;
     const x = location[0] / SPRITE_SIZE;
-    if (tiles[y][x].value === "E") {
-      removeTileData()
-      loadLevel(2)
+    if (getTiles()[y][x].value === "E") {
+      loadLevel(level + 1)
     }
   }
 
-  function checkPothole(oldPos, newPos) { // why oldPos??
-      const tiles = store.getState().map.tiles;
-      const y = newPos[1] / SPRITE_SIZE;
-      const x = newPos[0] / SPRITE_SIZE;
-      const nextTile = tiles[y][x];
-      if (nextTile.value === "PB") {
+  function checkPothole(location) {
+      const y = location[1] / SPRITE_SIZE;
+      const x = location[0] / SPRITE_SIZE;
+      const nextTile = getTiles()[y][x];
+      if (nextTile.value === "BB") {
         return true
       }
     }
 
-  function removeTileData() {
-    store.dispatch({
-      type: "REMOVE_DATA",
-      payload: {
-        loaded: false,
-        tiles: [],
-        startingPoint: null
-      },
-    })
-  }
-
   function loadLevel(number) {
-    var api = new API
-    api.makeRequest(number)
+    makeRequest(number)
   }
 
   function VimCantMove() {
@@ -129,10 +115,9 @@ export default function handleMovement(player) {
   }
 
   function checkInteraction(newPos) {
-    const tiles = store.getState().map.tiles;
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
-    const nextTile = tiles[y][x];
+    const nextTile = getTiles()[y][x];
     switch(nextTile.value) {
       case 'P1':
         if (doneP1 === false) {
@@ -155,15 +140,18 @@ export default function handleMovement(player) {
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
-    checkInteraction(newPos)
-    if (
-      observeBoundaries(oldPos, newPos) &&
-      observeImpassable(oldPos, newPos) &&
-      canMove
-    ) {
-      dispatchMove(direction, newPos);
-    } else if (canMove) {
-      dispatchMove(direction, oldPos)
+    const loaded = store.getState().map.loaded;
+    if (loaded && canMove) {
+      if (
+        observeBoundaries(newPos) &&
+        observeImpassable(newPos)
+      ) {
+        dispatchMove(direction, newPos);
+      } else if (observeBoundaries(newPos)){
+        checkInteraction(newPos)
+      } else {
+        dispatchMove(direction, oldPos)
+      }
     }
   }
       
@@ -173,7 +161,7 @@ export default function handleMovement(player) {
     const potholePos = getNewPosition(oldPos, direction);
        
     if (
-      checkPothole(oldPos, potholePos) &&
+      checkPothole(potholePos) &&
       canMove
     ) {
       dispatchMove(direction, newPos);

@@ -1,35 +1,40 @@
-import React from "react";
 import store from "../config/store";
 import { SPRITE_SIZE } from "../config/constants";
 
-class API extends React.Component {
-  makeRequest(number = 1) {
-    // API connection code
-    fetch(
-      `https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/2`
-    )
-      .then((res) => res.json())
-      .then((result) => {
+
+export default function makeRequest(number = 1) {
+  // API connection code
+  store.dispatch({
+    type: "UPDATE_MAP_STORE",
+    payload: {
+      loaded: false,
+      tiles: [],
+      level: number
+    },
+  })
+  fetch(
+    `https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/${number}`
+  )
+    .then((res) => res.json())
+    .then(
+      (result) => {
         store.dispatch({
-          type: "ADD_TILES",
+          type: "UPDATE_MAP_STORE",
           payload: {
             loaded: true,
             tiles: [...result.mapArray],
+            level: number
           },
-        });
+        })
         store.dispatch({
-          type: "VIM_START",
+          type: "UPDATE_PLAYER_STORE",
           payload: {
-            canMove: true,
-            position: [
-              result.startingPoint.x * SPRITE_SIZE,
-              result.startingPoint.y * SPRITE_SIZE,
-            ],
-            walkIndex: 0,
-          },
-        });
-      });
-  }
+            position: [result.startingPoint.x * SPRITE_SIZE, result.startingPoint.y * SPRITE_SIZE],
+            walkIndex: 0
+          }
+        })
+      }
+    );
 }
 
-export default API;
+
