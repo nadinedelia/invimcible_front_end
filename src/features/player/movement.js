@@ -141,18 +141,20 @@ export default function handleMovement(player) {
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
-    if (
-      observeBoundaries(oldPos, newPos) &&
-      observeImpassable(oldPos, newPos) &&
-      canMove
-    ) {
-      dispatchMove(direction, newPos);
-    } else if (canMove) {
-      dispatchMove(direction, oldPos)
+    const loaded = store.getState().map.loaded;
+    if (loaded) {
+      if (
+        observeBoundaries(oldPos, newPos) &&
+        observeImpassable(oldPos, newPos) &&
+        canMove
+      ) {
+        dispatchMove(direction, newPos);
+      } else if (observeBoundaries(oldPos, newPos) && canMove){
+        checkInteraction(newPos)
+      } else if (canMove) {
+        dispatchMove(direction, oldPos)
+      }
     }
-    else if (observeBoundaries(oldPos, newPos)){
-    checkInteraction(newPos)
-    } 
   }
       
   function attemptJump(direction){
