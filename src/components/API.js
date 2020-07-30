@@ -14,6 +14,7 @@ export default function makeRequest(number = 1) {
           payload: {
             loaded: true,
             tiles: [...result.mapArray],
+            level: number
           },
         })
         store.dispatch({

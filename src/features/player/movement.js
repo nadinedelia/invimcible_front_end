@@ -85,11 +85,11 @@ export default function handleMovement(player) {
   }
 
   function checkPositionEnd(location) {
+    const level = store.getState().map.level
     const y = location[1] / SPRITE_SIZE;
     const x = location[0] / SPRITE_SIZE;
     if (getTiles()[y][x].value === "E") {
-      removeTileData()
-      loadLevel(2)
+      loadLevel(level + 1)
     }
   }
 
@@ -101,17 +101,6 @@ export default function handleMovement(player) {
         return true
       }
     }
-
-  function removeTileData() {
-    store.dispatch({
-      type: "REMOVE_DATA",
-      payload: {
-        loaded: false,
-        tiles: [],
-        startingPoint: null
-      },
-    })
-  }
 
   function loadLevel(number) {
     makeRequest(number)
