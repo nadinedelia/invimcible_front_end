@@ -55,7 +55,6 @@ export default function handleMovement(player) {
   }
 
   function observeBoundaries(oldPos, newPos) {
-    console.log(newPos)
     return (
       newPos[0] >= 0 &&
       newPos[0] <= MAP_WIDTH - SPRITE_SIZE &&
@@ -142,16 +141,15 @@ export default function handleMovement(player) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
     const loaded = store.getState().map.loaded;
-    if (loaded) {
+    if (loaded && canMove) {
       if (
         observeBoundaries(oldPos, newPos) &&
-        observeImpassable(oldPos, newPos) &&
-        canMove
+        observeImpassable(oldPos, newPos)
       ) {
         dispatchMove(direction, newPos);
-      } else if (observeBoundaries(oldPos, newPos) && canMove){
+      } else if (observeBoundaries(oldPos, newPos)){
         checkInteraction(newPos)
-      } else if (canMove) {
+      } else {
         dispatchMove(direction, oldPos)
       }
     }
