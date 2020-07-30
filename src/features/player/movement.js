@@ -73,7 +73,7 @@ export default function handleMovement(player) {
   function dispatchMove(direction, newPos) {
     const walkIndex = getWalkIndex();
     store.dispatch({
-      type: "MOVE_PLAYER",
+      type: "UPDATE_PLAYER_STORE",
       payload: {
         position: newPos,
         direction: direction,

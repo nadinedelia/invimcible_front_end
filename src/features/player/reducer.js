@@ -1,5 +1,4 @@
 const initialState = {
-  canMove: false,
   position: [32, 32],
   spriteLocation: "0px 0px",
   direction: "east",
@@ -8,14 +7,10 @@ const initialState = {
 
 const playerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "MOVE_PLAYER":
+    case "UPDATE_PLAYER_STORE":
       return {
         ...action.payload,
       };
-    case "NO_MOVE_VIM":
-      return {
-        ...action.payload
-      }
     case 'VIM_START':
       return {
         ...action.payload

@@ -18,7 +18,7 @@ export default function makeRequest(number = 1) {
           },
         })
         store.dispatch({
-          type: "VIM_START",
+          type: "UPDATE_PLAYER_STORE",
           payload: {
             position: [result.startingPoint.x * SPRITE_SIZE, result.startingPoint.y * SPRITE_SIZE],
             walkIndex: 0
