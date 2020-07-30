@@ -1,6 +1,6 @@
 import React from "react";
 import World from "../features/world";
-import API from "./API.js";
+import makeRequest from "./API.js";
 import store from "../config/store";
 import {shallow} from 'enzyme';
 
@@ -19,6 +19,17 @@ describe("Level 1 connection", () => {
       }
     };
 
+    const mapOutput = {
+      loaded: true,
+      tiles: fakeResponse.mapArray,
+      level: 1,
+    }
+
+    const playerOutput = {
+      startingPoint: [32, 32],
+      walkIndex: 0
+    }
+
     jest.spyOn(window, "fetch").mockImplementation(() => {
       const fetchResponse = {
         json: () => Promise.resolve(fakeResponse),
@@ -26,38 +37,13 @@ describe("Level 1 connection", () => {
       return Promise.resolve(fetchResponse);
     });
 
-    var api = new API
-    api.makeRequest()
+    makeRequest(1)
 
     setTimeout(function (){
 
-      expect(store.getState().map).toBe(fakeResponse);
+      expect(store.getState().map).toBe(mapOutput);
+      expect(store.getState().player).toBe(playerOutput);
       
       }, 100)
   });
-
-  test("tiles render in correct posotion", async () => {
-    const fakeResponse = {
-      mapArray: [
-        [{value: "B", x: 416, y: 192, blocked: true}, {value: "B", x: 416, y: 192, blocked: true}],
-        [{value: "B", x: 416, y: 192, blocked: true}, {value: "B", x: 416, y: 192, blocked: true}],
-      ],
-      startPoint: {
-        x: 1,
-        y: 1,
-      }}
-
-    jest.spyOn(window, "fetch").mockImplementation(() => {
-      const fetchResponse = {
-        json: () => Promise.resolve(fakeResponse),
-      };
-      return Promise.resolve(fetchResponse);
-    });
-
-    const container = shallow(<World />)
-
-    let containerStyle = container.find('.tile B').get(0).style;
-    expect(containerStyle).toHaveProperty('opacity', '1');
-
-  })
 });
