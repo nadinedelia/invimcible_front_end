@@ -149,6 +149,7 @@ export default function handleMovement(player) {
         dispatchMove(direction, newPos);
       } else if (observeBoundaries(newPos)){
         checkInteraction(newPos)
+        dispatchMove(direction, oldPos)
       } else {
         dispatchMove(direction, oldPos)
       }
