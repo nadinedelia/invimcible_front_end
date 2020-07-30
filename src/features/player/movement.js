@@ -1,8 +1,6 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import makeRequest from "../../components/API"
-// import React, { Component, useState } from "react";
-// import Script from '../../components/scripts'
 
 export default function handleMovement(player) {
 
@@ -85,7 +83,6 @@ export default function handleMovement(player) {
     });
     checkPositionEnd(newPos)
   }
-
 
   function checkPositionEnd(location) {
     const y = location[1] / SPRITE_SIZE;
