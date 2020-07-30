@@ -1,6 +1,6 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
-import API from "../../components/API"
+import makeRequest from "../../components/API"
 // import React, { Component, useState } from "react";
 // import Script from '../../components/scripts'
 
@@ -116,8 +116,7 @@ export default function handleMovement(player) {
   }
 
   function loadLevel(number) {
-    var api = new API
-    api.makeRequest(number)
+    makeRequest(number)
   }
 
   function VimCantMove() {
