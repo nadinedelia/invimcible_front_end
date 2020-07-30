@@ -11,6 +11,10 @@ export default function handleMovement(player) {
   let doneP2 = false
   let doneP3 = false
 
+  function getTiles() {
+    return store.getState().map.tiles
+  }
+
   function getNewPosition(oldPos, direction) {
     switch (direction) {
       case "WEST":
@@ -62,10 +66,9 @@ export default function handleMovement(player) {
   }
 
   function observeImpassable(oldPos, newPos) {
-    const tiles = store.getState().map.tiles;
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
-    const nextTile = tiles[y][x];
+    const nextTile = getTiles()[y][x];
     return nextTile.blocked === false;
   }
 
@@ -85,20 +88,18 @@ export default function handleMovement(player) {
 
 
   function checkPositionEnd(location) {
-    const tiles = store.getState().map.tiles;
     const y = location[1] / SPRITE_SIZE;
     const x = location[0] / SPRITE_SIZE;
-    if (tiles[y][x].value === "E") {
+    if (getTiles()[y][x].value === "E") {
       removeTileData()
       loadLevel(2)
     }
   }
 
   function checkPothole(oldPos, newPos) { // why oldPos??
-      const tiles = store.getState().map.tiles;
       const y = newPos[1] / SPRITE_SIZE;
       const x = newPos[0] / SPRITE_SIZE;
-      const nextTile = tiles[y][x];
+      const nextTile = getTiles()[y][x];
       if (nextTile.value === "PB") {
         return true
       }
@@ -128,10 +129,9 @@ export default function handleMovement(player) {
   }
 
   function checkInteraction(newPos) {
-    const tiles = store.getState().map.tiles;
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
-    const nextTile = tiles[y][x];
+    const nextTile = getTiles()[y][x];
     switch(nextTile.value) {
       case 'P1':
         if (doneP1 === false) {
