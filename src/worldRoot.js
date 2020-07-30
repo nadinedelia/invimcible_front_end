@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import World from "./features/world";
-import Scripts from "./components/scripts/index"
+import Scripts from "./components/scripts/index";
 import VimCommand from "./components/vimCommands";
 import Help from "./components/helpScreen/help";
 import store from "./config/store";
 import { Redirect } from "react-router-dom";
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 
 function WorldRoot() {
   const [quit, setQuit] = useState(false);
@@ -24,7 +24,9 @@ function WorldRoot() {
         if (store.getState().vimCommand.length === 1) {
           setShowHelp(false);
           return setShowVimCommand(false);
-        } else { return }
+        } else {
+          return;
+        }
       case "Enter":
         if (displayVimCommand) {
           if (store.getState().vimCommand === ":h") {
@@ -46,28 +48,29 @@ function WorldRoot() {
 
   return (
     <Provider store={store}>
-    <div className="super-container">
-      <center>
-        <a href="/">
-          <img src={"images/logo.png"} className="logo2" />
-        </a>
-        <div className="game-container">
-          <div className="support-container">
-            <Scripts/>
-          </div>
-
-          <div className="container-right">
-            <div className="zone-container">
-              {displayHelp ? <Help /> : null}
-              <World />
-
+      <div className="super-container">
+        <center>
+          <a href="/">
+            <img src={"images/logo.png"} className="logo2" />
+          </a>
+          <h4> Press ' :h ' to see the menu </h4>
+          <div className="game-container">
+            <div className="support-container">
+              <Scripts />
+              <br></br>
               {displayVimCommand ? <VimCommand /> : null}
+              <br></br>
+              <br></br>
               {quit ? <Redirect to="/" /> : null}
+              {displayHelp ? <Help /> : null}
+            </div>
+
+            <div className="container-right">
+              <World />
             </div>
           </div>
-        </div>
-      </center>
-    </div>
+        </center>
+      </div>
     </Provider>
   );
 }
