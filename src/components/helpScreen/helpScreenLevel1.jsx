@@ -1,4 +1,3 @@
-import React from "react";
 import Output from "./helpScreen";
 
 export default function HelpScreenLevel1({}) {

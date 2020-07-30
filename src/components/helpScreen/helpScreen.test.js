@@ -1,5 +1,4 @@
 import React from "react";
-import Output from "./helpScreen.jsx";
 import HelpScreenLevel1 from "./helpScreenLevel1.jsx";
 import HelpScreenLevel2 from "./helpScreenLevel2.jsx";
 import { shallow } from "enzyme";
