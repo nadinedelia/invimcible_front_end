@@ -53,7 +53,7 @@ function WorldRoot() {
           <a href="/">
             <img src={"images/logo.png"} className="logo2" />
           </a>
-          <h4> Press ' :h ' to see the menu </h4>
+          <h4> Type ' :h ' to see the menu </h4>
           <div className="game-container">
             <div className="support-container">
               <Scripts />

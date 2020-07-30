@@ -42,7 +42,7 @@ function Map(props) {
         left: "-32px",
         width: MAP_WIDTH,
         height: MAP_HEIGHT,
-        backgroundColor: "#42b842",
+        backgroundColor: "black",
         border: "3px solid white",
       }}
     >

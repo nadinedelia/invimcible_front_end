@@ -1,6 +1,6 @@
 const initialState = {
   scripts:
-    "Vim has just had his haircut and is ready to cycle home looking fresh-fresh. But wait...\n\nVim: ?? I thought I left my bike tied up here. Maybe I left it over there…\n\nHelp Vim search for his bike using the vim commands for left, down, up, right (‘hjkl’) to navigate around the game.",
+    "Vim has just had his haircut and is ready to cycle home looking fresh-fresh. But wait...\n\nVim: ?? I thought I left my bike tied up here. Maybe I left it over there…\n\n"
 };
 
 const scriptReducer = (state = initialState, action) => {
