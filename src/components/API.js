@@ -1,6 +1,7 @@
 import store from "../config/store";
 import { SPRITE_SIZE } from "../config/constants";
 
+
 export default function makeRequest(number = 1) {
   // API connection code
   store.dispatch({
