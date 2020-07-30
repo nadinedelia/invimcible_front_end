@@ -3,6 +3,14 @@ import { SPRITE_SIZE } from "../config/constants";
 
 export default function makeRequest(number = 1) {
   // API connection code
+  store.dispatch({
+    type: "UPDATE_MAP_STORE",
+    payload: {
+      loaded: false,
+      tiles: [],
+      level: number
+    },
+  })
   fetch(
     `https://cors-anywhere.herokuapp.com/https://vim-back-end.herokuapp.com/${number}`
   )
