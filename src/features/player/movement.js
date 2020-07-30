@@ -54,7 +54,7 @@ export default function handleMovement(player) {
     return walkIndex >= 2 ? 0 : walkIndex + 1;
   }
 
-  function observeBoundaries(oldPos, newPos) {
+  function observeBoundaries(newPos) {
     return (
       newPos[0] >= 0 &&
       newPos[0] <= MAP_WIDTH - SPRITE_SIZE &&
@@ -63,7 +63,7 @@ export default function handleMovement(player) {
     );
   }
 
-  function observeImpassable(oldPos, newPos) {
+  function observeImpassable(newPos) {
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
     const nextTile = getTiles()[y][x];
@@ -143,11 +143,11 @@ export default function handleMovement(player) {
     const loaded = store.getState().map.loaded;
     if (loaded && canMove) {
       if (
-        observeBoundaries(oldPos, newPos) &&
-        observeImpassable(oldPos, newPos)
+        observeBoundaries(newPos) &&
+        observeImpassable(newPos)
       ) {
         dispatchMove(direction, newPos);
-      } else if (observeBoundaries(oldPos, newPos)){
+      } else if (observeBoundaries(newPos)){
         checkInteraction(newPos)
       } else {
         dispatchMove(direction, oldPos)
