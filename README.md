@@ -30,12 +30,12 @@ We hope that Vimcincible will provide a fun way for users to become more vim pro
 | Language                     | Javascript         |
 | CI/CD                        | Travis.            |
 | Hosting                      | Heroku, Netlify    |
-| Databases                    | SQL.               |
 | Styling                      | Sass, CSS          |
 | Front end testing frameworks | Jest, Enzyme       |
 | API testing frameworks       | Snapshot           |
 | Code Coverage                | Jest               |
 
+Using a database to store the user's level and position is part of the plan for future developments.
 
 ## Team Values
 We fostered a learning environment and wanted to ensure that knowledge sharing was at the root of the team. Here are some values and approaches we found effective in ensuring a great working team:
