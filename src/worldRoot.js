@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import World from "./features/world";
 import Scripts from "./components/scripts/index";
 import VimCommand from "./components/vimCommands";
@@ -21,10 +21,7 @@ function WorldRoot() {
       case ":":
         return toggleShowVimCommand();
       case "Backspace":
-        if (
-          store.getState().vimCommand === ":" ||
-          store.getState().vimCommand.input === ""
-        ) {
+        if (store.getState().vimCommand.length === 1) {
           setShowHelp(false);
           return setShowVimCommand(false);
         } else {
