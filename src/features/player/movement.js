@@ -1,8 +1,8 @@
 import store from "../../config/store";
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT, SCRIPT_1 } from "../../config/constants";
 import API from "../../components/API"
-import React, { Component, useState } from "react";
-import Script from '../../components/scripts'
+// import React, { Component, useState } from "react";
+// import Script from '../../components/scripts'
 
 export default function handleMovement(player) {
 
@@ -12,7 +12,6 @@ export default function handleMovement(player) {
   let doneP3 = false
 
   function getNewPosition(oldPos, direction) {
-    console.log(SPRITE_SIZE)
     switch (direction) {
       case "WEST":
         return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
@@ -23,17 +22,14 @@ export default function handleMovement(player) {
       case "SOUTH":
         return [oldPos[0], oldPos[1] + SPRITE_SIZE];
       default:
-        console.log(direction);
     }
   }
 
   function getNewJumpPosition(oldPos, direction) {
-    console.log(SPRITE_SIZE);
     switch (direction) {
       case "EAST":
         return [oldPos[0] + (SPRITE_SIZE * 2), oldPos[1]];
       default:
-        console.log(direction);
     }
   }
 
@@ -48,7 +44,6 @@ export default function handleMovement(player) {
       case "NORTH":
         return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
       default:
-        console.log(direction);
     }
   }
 
@@ -93,21 +88,17 @@ export default function handleMovement(player) {
     const tiles = store.getState().map.tiles;
     const y = location[1] / SPRITE_SIZE;
     const x = location[0] / SPRITE_SIZE;
-    console.log(x,y)
-    console.log(tiles[y][x])
     if (tiles[y][x].value === "E") {
-      console.log("end tile")
       removeTileData()
       loadLevel(2)
     }
   }
 
-  function checkPothole(oldPos, newPos) {
+  function checkPothole(oldPos, newPos) { // why oldPos??
       const tiles = store.getState().map.tiles;
       const y = newPos[1] / SPRITE_SIZE;
       const x = newPos[0] / SPRITE_SIZE;
       const nextTile = tiles[y][x];
-      console.log(nextTile.value, "next tile")
       if (nextTile.value === "PB") {
         return true
       }
@@ -137,7 +128,7 @@ export default function handleMovement(player) {
     canMove = true;
   }
 
-  function checkInteraction(oldPos, newPos, direction) {
+  function checkInteraction(newPos) {
     const tiles = store.getState().map.tiles;
     const y = newPos[1] / SPRITE_SIZE;
     const x = newPos[0] / SPRITE_SIZE;
@@ -164,16 +155,15 @@ export default function handleMovement(player) {
   function attemptMove(direction) {
     const oldPos = store.getState().player.position;
     const newPos = getNewPosition(oldPos, direction);
-    checkInteraction(oldPos, newPos, direction)
-    console.log(newPos)
+    checkInteraction(newPos)
     if (
       observeBoundaries(oldPos, newPos) &&
       observeImpassable(oldPos, newPos) &&
       canMove
     ) {
       dispatchMove(direction, newPos);
-    } else {
-      dispatchMove(direction, oldPos);
+    } else if (canMove) {
+      dispatchMove(direction, oldPos)
     }
   }
       
@@ -206,8 +196,10 @@ export default function handleMovement(player) {
         return attemptMove("EAST");
       case "j":
         return attemptMove("SOUTH");
-      case "Escape":
-        return VimMoves();
+      case "Backspace":
+        if (store.getState().vimCommand.length === 1) {
+          return VimMoves();
+        } else { return }
       case ":":
         return VimCantMove();
       case "w":

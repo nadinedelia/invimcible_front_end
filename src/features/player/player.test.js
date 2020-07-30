@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
 import getNewPosition from "./movement";
 import getSpriteLocation from "./movement";
-import handleMovement from "./movement";
-import Player from "./index.js";
+// import handleMovement from "./movement";
+// import Player from "./index.js";
 
 describe("Player", () => {
 

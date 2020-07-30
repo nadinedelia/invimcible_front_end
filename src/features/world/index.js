@@ -3,14 +3,13 @@ import Map from "../map";
 import Player from "../player";
 import "./world.css";
 import API from "../../components/API";
-import store from "../../config/store";
+// import store from "../../config/store";
 
 var api = new API();
 api.makeRequest();
 
 function World(props) {
   return (
-    // console.log(this, "return world"),
     <div
       style={{
         position: "relative",

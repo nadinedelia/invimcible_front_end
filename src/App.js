@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Home from "./components/home/index.jsx";
 import About from "./components/about/index.jsx";
 import WorldRoot from "./worldRoot";

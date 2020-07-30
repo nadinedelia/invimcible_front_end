@@ -1,7 +1,7 @@
-import React, { Component, PropTypes, useImperativeHandle } from 'react';
-import { render } from "@testing-library/react"
+import React from 'react';
+// import { render } from "@testing-library/react"
 import "./vimCommands.css"
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import store from '../../config/store';
 
 export default class VimCommand extends React.Component {

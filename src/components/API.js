@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import store from "../config/store";
 import { SPRITE_SIZE } from "../config/constants";
 
@@ -12,13 +12,11 @@ class API extends React.Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result)
           store.dispatch({
             type: "ADD_TILES",
             payload: {
               loaded: true,
               tiles: [...result.mapArray],
-              startingPoint: result.startingPoint
             },
           })
           store.dispatch({
@@ -29,7 +27,6 @@ class API extends React.Component {
               walkIndex: 0
             }
           })
-          console.log(store.getState().player.position, "I am position")
         }
       );
   }
