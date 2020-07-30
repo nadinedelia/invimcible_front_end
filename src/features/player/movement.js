@@ -31,6 +31,8 @@ export default function handleMovement(player) {
     switch (direction) {
       case "EAST":
         return [oldPos[0] + (SPRITE_SIZE * 2), oldPos[1]];
+      case "WEST":
+        return [oldPos[0] - (SPRITE_SIZE * 2), oldPos[1]];
       default:
     }
   }
@@ -193,6 +195,8 @@ export default function handleMovement(player) {
         return VimCantMove();
       case "w":
         return attemptJump("EAST");
+      case "b":
+        return attemptJump("WEST");
       default:
         return;
     }
