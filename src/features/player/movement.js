@@ -162,6 +162,8 @@ export default function handleMovement(player) {
       canMove
     ) {
       dispatchMove(direction, newPos);
+    } else if (canMove) {
+      dispatchMove(direction, oldPos)
     }
   }
       
