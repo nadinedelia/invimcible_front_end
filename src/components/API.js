@@ -10,7 +10,7 @@ export default function makeRequest(number = 1) {
     .then(
       (result) => {
         store.dispatch({
-          type: "ADD_TILES",
+          type: "UPDATE_MAP_STORE",
           payload: {
             loaded: true,
             tiles: [...result.mapArray],
@@ -20,7 +20,6 @@ export default function makeRequest(number = 1) {
         store.dispatch({
           type: "VIM_START",
           payload: {
-            canMove: true,
             position: [result.startingPoint.x * SPRITE_SIZE, result.startingPoint.y * SPRITE_SIZE],
             walkIndex: 0
           }
