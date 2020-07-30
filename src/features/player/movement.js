@@ -93,9 +93,9 @@ export default function handleMovement(player) {
     }
   }
 
-  function checkPothole(oldPos, newPos) { // why oldPos??
-      const y = newPos[1] / SPRITE_SIZE;
-      const x = newPos[0] / SPRITE_SIZE;
+  function checkPothole(location) {
+      const y = location[1] / SPRITE_SIZE;
+      const x = location[0] / SPRITE_SIZE;
       const nextTile = getTiles()[y][x];
       if (nextTile.value === "BB") {
         return true
@@ -161,7 +161,7 @@ export default function handleMovement(player) {
     const potholePos = getNewPosition(oldPos, direction);
        
     if (
-      checkPothole(oldPos, potholePos) &&
+      checkPothole(potholePos) &&
       canMove
     ) {
       dispatchMove(direction, newPos);
