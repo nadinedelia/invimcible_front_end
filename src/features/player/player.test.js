@@ -1,6 +1,6 @@
 // import React from "react";
 import getSpriteLocation from "./movement";
-import attemptMove from "./movement";
+import handleKeyDown from "./movement";
 import store from "../../config/store";
 // import Player from "./index.js";
 
@@ -23,9 +23,9 @@ describe("Player", () => {
             walkIndex: 0
       }
     })
-    attemptMove("EAST")
+    handleKeyDown('h')
     setTimeout(function (){
-      expect(store.getState().player.position).toEqual([32,0])
+      expect(store.getState().player.position).toEqual([32, 0])
     }, 100)
   });
 
@@ -46,9 +46,9 @@ describe("Player", () => {
             walkIndex: 0
       }
     })
-    attemptMove("WEST")
+    handleKeyDown('l')
     setTimeout(function (){
-      expect(store.getState().player.position).toEqual([0,0])
+      expect(store.getState().player.position).toEqual([0, 0])
     }, 100)
   });
 
@@ -69,9 +69,9 @@ describe("Player", () => {
             walkIndex: 0
       }
     })
-    attemptMove("SOUTH")
+    handleKeyDown('j')
     setTimeout(function (){
-      expect(store.getState().player.position).toEqual([0,32])
+      expect(store.getState().player.position).toEqual([0, 32])
     }, 100)
   });
 
@@ -92,9 +92,32 @@ describe("Player", () => {
             walkIndex: 0
       }
     })
-    attemptMove("NORTH")
+    handleKeyDown('k')
     setTimeout(function (){
-      expect(store.getState().player.position).toEqual([0,0])
+      expect(store.getState().player.position).toEqual([0, 0])
+    }, 100)
+  });
+
+  it("can not move off the map", () => {
+    store.dispatch({
+      type: "UPDATE_MAP_STORE",
+      payload: {
+        loaded: true,
+        tiles: [[{"value":"SC4","x":32,"y":224,"blocked":false},{"value":"SPD","x":96,"y":224,"blocked":false}]
+        ,[{"value":"SC4","x":32,"y":224,"blocked":false},{"value":"SPD","x":96,"y":224,"blocked":false}]],
+        level: 1
+      },
+    })
+    store.dispatch({
+      type: "UPDATE_PLAYER_STORE",
+      payload: {
+        position: [0, 0],
+            walkIndex: 0
+      }
+    })
+    handleKeyDown('k')
+    setTimeout(function (){
+      expect(store.getState().player.position).toEqual([0, 0])
     }, 100)
   });
 
@@ -114,9 +137,9 @@ describe("Player", () => {
             walkIndex: 0
       }
     })
-    attemptMove("NORTH")
+    handleKeyDown('k')
     setTimeout(function (){
-      expect(store.getState().player.position).toEqual([0,32)
+      expect(store.getState().player.position).toEqual([0,32])
     }, 100)
   });
 
@@ -137,7 +160,7 @@ describe("Player", () => {
             walkIndex: 0
       }
     })
-    attemptMove("NORTH")
+    handleKeyDown('k')
     setTimeout(function (){
       expect(store.getState().player.position).toEqual([0,32])
     }, 100)
