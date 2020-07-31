@@ -4,7 +4,13 @@
 
 Welcome to our final team at Makers. At the current stage of development, 8 working days were spent planning, developing, and implementing before a feature freeze, with two further working days dedicated to tidying up code. For a detailed account of the agile working environment and the sprints involved in this project, please visit [the team wiki](https://github.com/RaeRachael/invimcible_front_end/wiki), with the additional [back end wiki](https://github.com/tristanlangford/invimcible_back_end/wiki).
 
+Jump to:
 
+* [What is Vimvincible?](https://github.com/raerachael/invimcible_front_end#what-is-vimvincible)
+* [Technologies Used](https://github.com/raerachael/invimcible_front_end#technologies-used)
+* [Team Values](https://github.com/raerachael/invimcible_front_end#team-values)
+* [Sneak Peak](https://github.com/raerachael/invimcible_front_end#preview)
+* [Try it at home!](https://github.com/raerachael/invimcible_front_end#how-to-run-locally)
 
 ## Team
 * [Tristan](https://github.com/tristanlangford)
@@ -51,6 +57,25 @@ We fostered a learning environment and wanted to ensure that knowledge sharing w
 * Pairing began with the same two people for the duration of the sprint, but this resulted in blind spots in the codebase, as certain people ended up working solely in one area. Switching to a daily swap meant that all members of the group have an understanding of <i>the entire codebase</i>.
 * <b>Code production hours 9am-5pm </b>to maintain the integrity of the code and to avoid promoting an unhealthy work/ life balance.
 * The team wrote a charter on the first day which set out expectations for the group, group values, and personal work styles. We decided on the first day to have fun, which we have done <b>every day</b>.
+
+
+## Preview
+The landing page:
+
+![](./public/images/VB_homepage.png)
+
+Level 1, showing Vim having an interaction:
+
+![](./public/images/VB_L1_interaction.png)
+
+The help menu that can be accessed by typing ':h':
+
+![](./public/images/VB_helpscreen.png)
+
+Level 2:
+![](./public/images/VB_L2.png)
+
+
 
 ## How to run locally
 1. Fork this repo and clone it locally:
