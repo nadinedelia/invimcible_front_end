@@ -38,13 +38,12 @@ We hope that Vimcincible will provide a fun way for users to become more vim pro
 | Usage                      | Technology         |
 | ---------------------------- | :----------------- |
 | Front end framework          | React              |
-| Server framework             | Express            |
 | Language                     | Javascript         |
-| CI/CD                        | Travis.            |
+| CI/CD                        | Travis             |
 | Hosting                      | Heroku, Netlify    |
 | Styling                      | Sass, CSS          |
-| Front end testing frameworks | Jest, Enzyme       |
-| API testing frameworks       | Snapshot           |
+| Front end testing frameworks | Jest               |
+| Visual display testing       | Snapshot           |
 | Code Coverage                | Jest               |
 
 Using a database to store the user's level and position is part of the plan for future developments.
@@ -95,4 +94,9 @@ npm start
 3. Go to your local server: 
 ```
 http://localhost:3000/
+```
+
+4. To test, run:
+```
+npm test
 ```
