@@ -76,6 +76,7 @@ The help menu that can be accessed by typing ':h':
 
 <br>
 Level 2:
+
 <img src="./public/images/VB_L2.png" width="900">
 
 
