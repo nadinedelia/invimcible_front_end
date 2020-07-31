@@ -1,6 +1,6 @@
 # Vimvincible
- 
-[Deployed here](https://vimvincible.netlify.app/)
+ <a href="https://vimvincible.netlify.app/" target="_blank">Deployed here.</a>
+
 
 ### Jump to:
 
