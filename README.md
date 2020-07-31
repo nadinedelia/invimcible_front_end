@@ -1,16 +1,18 @@
 # Vimvincible
-
+ 
 [Deployed here](https://vimvincible.netlify.app/)
 
-Welcome to our final team at Makers. At the current stage of development, 8 working days were spent planning, developing, and implementing before a feature freeze, with two further working days dedicated to tidying up code. For a detailed account of the agile working environment and the sprints involved in this project, please visit [the team wiki](https://github.com/RaeRachael/invimcible_front_end/wiki), with the additional [back end wiki](https://github.com/tristanlangford/invimcible_back_end/wiki).
-
-Jump to:
+### Jump to:
 
 * [What is Vimvincible?](https://github.com/raerachael/invimcible_front_end#what-is-vimvincible)
 * [Technologies Used](https://github.com/raerachael/invimcible_front_end#technologies-used)
 * [Team Values](https://github.com/raerachael/invimcible_front_end#team-values)
 * [Sneak Peak](https://github.com/raerachael/invimcible_front_end#preview)
 * [Try it at home!](https://github.com/raerachael/invimcible_front_end#how-to-run-locally)
+
+Welcome to our final team at Makers. At the current stage of development, 8 working days were spent planning, developing, and implementing before a feature freeze, with two further working days dedicated to tidying up code. For a detailed account of the agile working environment and the sprints involved in this project, please visit [the team wiki](https://github.com/RaeRachael/invimcible_front_end/wiki), with the additional [back end wiki](https://github.com/tristanlangford/invimcible_back_end/wiki).
+
+
 
 ## Team
 * [Tristan](https://github.com/tristanlangford)
