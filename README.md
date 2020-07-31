@@ -64,18 +64,19 @@ We fostered a learning environment and wanted to ensure that knowledge sharing w
 ## Preview
 The landing page:
 
-![](./public/images/VB_homepage.png)
+<img src="./public/images/VB_homepage.png" width="700">
 
 Level 1, showing Vim having an interaction:
 
-![](./public/images/VB_L1_interaction.png)
+<img src="./public/images/VB_L1_interaction.png" width="800">
 
 The help menu that can be accessed by typing ':h':
 
 ![](./public/images/VB_helpscreen.png)
 
+<br>
 Level 2:
-![](./public/images/VB_L2.png)
+<img src="./public/images/VB_L2.png" width="900">
 
 
 
