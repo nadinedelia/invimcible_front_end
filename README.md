@@ -4,6 +4,8 @@
 
 Welcome to our final team at Makers. At the current stage of development, 8 working days were spent planning, developing, and implementing before a feature freeze, with two further working days dedicated to tidying up code. For a detailed account of the agile working environment and the sprints involved in this project, please visit [the team wiki](https://github.com/RaeRachael/invimcible_front_end/wiki), with the additional [back end wiki](https://github.com/tristanlangford/invimcible_back_end/wiki).
 
+
+
 ## Team
 * [Tristan](https://github.com/tristanlangford)
 * [Rae](https://github.com/RaeRachael/invimcible_front_end)
@@ -16,9 +18,11 @@ Welcome to our final team at Makers. At the current stage of development, 8 work
 
 This is a topdown <b>educational</b> role play game that follows a character, Vim Bishop, as he looks for his bike.
 * Vim can be moved around the levels using the vim commands 'hjkl' in place of arrows keys. 
-* The second level allows Vim's character to jump over potholes using the vim command 'w' to jump to the left, mimicking the vim command that allows users to jump to the end of a sentence.
+* The second level allows Vim's character to jump over potholes using the vim command 'w' to jump to the right, mimicking the vim command that allows users to jump to the end of a word, and the 'b' command to jump to the left.
 
 We hope that Vimcincible will provide a fun way for users to become more vim proficient.
+
+
 
 ## Technologies Used
 <br>
@@ -49,10 +53,17 @@ We fostered a learning environment and wanted to ensure that knowledge sharing w
 * The team wrote a charter on the first day which set out expectations for the group, group values, and personal work styles. We decided on the first day to have fun, which we have done <b>every day</b>.
 
 ## How to run locally
-1. Fork this repo.
+1. Fork this repo and clone it locally:
+```
+git clone git@github.com:...
+```
 2. Follow the below:
 
 ```
-npm i
+npm install
 npm start
+```
+3. Go to your local server: 
+```
+http://localhost:3000/
 ```
